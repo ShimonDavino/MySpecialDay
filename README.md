@@ -25,3 +25,40 @@ ASP.NET + HTML + C# + MS-SQL + JavaScript <br>
 <b>My Special Day Team</b><br>
 [our members](https://github.com/ShimonDavino/MySpecialDay/wiki/Team-page)
 <br>
+
+<b>Documentation</b><br>
+[ Project document](https://www.dropbox.com/s/d6opgxlb1luc3y6/paper%20.docx)
+[ Project presentation](https://www.dropbox.com/s/kj4vj0t9gihiowx/presentation.pptx)
+<p>
+<b>Project link</b><br>
+Classified !
+</p>
+
+<p>
+<b> Project repository link</b><br>
+https://github.com/ShimonDavino/MySpecialDay
+</p>
+
+<p>
+<b>License</b><br>
+The My Special Day project is licensed under the open source BSD license.<br>
+Copyright (c) 20014, My Special Day & JCE All rights reserved.
+</p>
+
+<p>
+<b>Build Instructions</b><br>
+The repository directly connected to AppHarbor host service.
+</p>
+
+<p>
+<b>Test Instructions</b><br>
+Coming soon...
+</p>
+
+<p>
+<b>Issues Tracker</b><br>
+https://github.com/ShimonDavino/MySpecialDay/issues
+</p>
+
+
+visit our GitHub [My Special Day Wiki](https://github.com/ShimonDavino/MySpecialDay/wiki
