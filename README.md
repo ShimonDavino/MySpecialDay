@@ -65,4 +65,5 @@ later on...
 <b>My Special Day Team</b><br>
 [our members](https://github.com/ShimonDavino/MySpecialDay/wiki/Team-page)
 <br>
-visit our GitHub [My Special Day Wiki](https://github.com/ShimonDavino/MySpecialDay/wiki
+
+visit our GitHub [My Special Day Wiki](https://github.com/ShimonDavino/MySpecialDay/wiki)
