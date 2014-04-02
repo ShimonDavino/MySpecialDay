@@ -47,12 +47,12 @@ Copyright (c) 20014, My Special Day & JCE All rights reserved.
 
 <p>
 <b>Build Instructions</b><br>
-The repository directly connected to AppHarbor host service.
+The repository connected to AppHarbor.com
 </p>
 
 <p>
 <b>Test Instructions</b><br>
-Coming soon...
+later on...
 </p>
 
 <p>
