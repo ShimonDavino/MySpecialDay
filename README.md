@@ -16,5 +16,12 @@ Project logo:<br>
 The main goal of "My Special Day" website is to help with all the small details that cost lots of time and to leave a pleasant memory after the event
 </p>
 
+<p>
+<b>My Special Day Technology</b><br>
+ASP.NET + HTML + C# + MS-SQL + JavaScript <br>
+</p>
 
-See more at [My Special Day Wiki](https://github.com/ShimonDavino/MySpecialDay/wiki)
+
+<b>My Special Day Team</b><br>
+[our members](https://github.com/ShimonDavino/MySpecialDay/wiki/Team-page)
+<br>
