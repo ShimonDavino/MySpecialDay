@@ -13,8 +13,8 @@ Project logo:<br>
 
 <b>About</b><br>
 The main goal of "My Special Day" website is to help with all the small details that cost lots of time and to leave a pleasant memory after the event<br>
-[Document] (https://www.dropbox.com/s/d6opgxlb1luc3y6/paper%20.docx) 
-,  [ Presentation] (https://www.dropbox.com/s/kj4vj0t9gihiowx/presentation.pptx)
+[Document] (https://onedrive.live.com/redir?resid=2201F7815AE67DB9!117&authkey=!ALK7_1_R0Eav8fU&ithint=file%2c.docx) 
+,  [ Presentation] (https://onedrive.live.com/redir?resid=2201F7815AE67DB9!116&authkey=!AEzW6FMTQ_dk2kM&ithint=file%2c.pptx)
 
 
 <b>Project link</b><br>
