@@ -18,7 +18,7 @@ The main goal of "My Special Day" website is to help with all the small details 
 
 
 <b>Project link</b><br>
-Classified !
+[Classified !] (http://myspaialday.net84.net/index.html)
 </p>
 
 <p>
