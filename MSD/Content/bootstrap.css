@@ -1997,6 +1997,40 @@ textarea.input-lg {
   }
 }
 
+
+
+
+.button {
+background-color: #1d9696;
+color: #102e5a;
+float: right;
+padding: 30px;
+border-radius: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+}
+
+.small-btn {
+width: 50px;
+height: 20px;
+}
+
+.medium-btn {
+width: 70px;
+height: 30px;
+}
+
+.big-btn {
+width: 100px;
+height: 100px;
+}
+
+
+
+
+
+
+
 .btn {
   display: inline-block;
   padding: 6px 12px;

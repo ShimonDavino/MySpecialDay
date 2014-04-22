@@ -19,7 +19,8 @@ namespace MSD.Account
             if (result.Succeeded)
             {
                 IdentityHelper.SignIn(manager, user, isPersistent: false);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                IdentityHelper.RedirectToReturnUrl(Request.QueryString["UserProfile.aspx"], Response);
+            
             }
             else 
             {
