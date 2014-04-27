@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - ASP.NET Application</title>
+    <title>My Special Day - <%: Page.Title %></title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -17,6 +17,7 @@
 </head>
 <body>
     <form runat="server">
+      
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -37,9 +38,10 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+        
         <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+            
+             <div class="container">
                 <div class="navbar-header">
                </div>
                 <div class="navbar-collapse collapse">
@@ -47,7 +49,7 @@
                         <li><a runat="server" href="~/Contact">צור קשר</a></li>
                         <li><a runat="server" href="~/main">דף הבית</a></li>
                     <%-- <li><a runat="server" href="~/About">אודות</a></li> --%>    
-                      
+                   
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>

@@ -5,18 +5,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <title>mobile <%: Page.Title %> </title>
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-        <h1>ъцевд боск чип</h1>
+        <h1>mobile adjustment</h1>
+        <friendlyUrls:ViewSwitcher runat="server" />
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <section class="content-wrapper main-content clear-fix">
             <asp:ContentPlaceHolder runat="server" ID="MainContent" />
         </section>
         <friendlyUrls:ViewSwitcher runat="server" />
+
+
+      
+
+
     </div>
     </form>
 </body>
