@@ -154,6 +154,28 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\carousel.css" />
+    <Content Include="Content\images\006_2592x3888_all-free-download.com_25207915.jpg" />
+    <Content Include="Content\images\036_4056x2704_all-free-download.com_14554306.jpg" />
+    <Content Include="Content\images\3dheart_012_all-free-download.com.jpg" />
+    <Content Include="Content\images\Abstract_Wave_Background.jpg" />
+    <Content Include="Content\images\blue_abstract_background.jpg" />
+    <Content Include="Content\images\britt&amp;jamie271-X2.jpg" />
+    <Content Include="Content\images\icon-facebook.png" />
+    <Content Include="Content\images\icon-google.png" />
+    <Content Include="Content\images\icon-twitter.png" />
+    <Content Include="Content\images\MY SPECIAL DAY logo big.jpg" />
+    <Content Include="Content\images\MY SPECIAL DAY logo small.jpg" />
+    <Content Include="Content\images\plate_cutlery_tableware.jpg" />
+    <Content Include="Content\images\romantic_couple_192454.jpg" />
+    <Content Include="Content\images\slider_romantique.jpg" />
+    <Content Include="Content\images\two_glasses_of_wine_194405.jpg" />
+    <Content Include="Content\images\vintage_wedding_car_188682.jpg" />
+    <Content Include="Content\images\water2.jpg" />
+    <Content Include="Content\images\wedding.jpg" />
+    <Content Include="Content\images\wedding_bridge_groom.jpg" />
+    <Content Include="Content\images\wedding_cake_192520.jpg" />
+    <Content Include="Content\images\wedding_gazebo_by_the_sea_204277.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="EventProfile.aspx" />
     <Content Include="EventRegistration.aspx" />
@@ -163,6 +185,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="main11.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="UserRegistration.aspx" />
     <Content Include="WebForm1.aspx" />
@@ -223,12 +246,14 @@
     </Compile>
     <Compile Include="Account\Manage.aspx.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Manage.aspx.designer.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
@@ -242,6 +267,7 @@
     </Compile>
     <Compile Include="Account\RegisterExternalLogin.aspx.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
@@ -304,6 +330,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="main11.aspx.cs">
+      <DependentUpon>main11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main11.aspx.designer.cs">
+      <DependentUpon>main11.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -320,6 +353,7 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

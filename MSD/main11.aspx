@@ -1,11 +1,10 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="main.aspx.cs" Inherits="MSD._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="main11.aspx.cs" Inherits="MSD._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
   
     
-    <body >
-        
-        <!-- Carousel
+    <body>
+            <!-- Carousel
     ================================================== -->
     
     <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
@@ -17,7 +16,7 @@
       </ol>
       <div class="carousel-inner"  >
         <div class="item active">
-            <img src="Content/images/MY%20SPECIAL%20DAY%20logo%20big.jpg"  />   <%-- first picture --%>
+            <img src="Content/images/wedding_bridge_groom.jpg"  />   <%-- first picture --%>
             
           <div class="container">
             <div class="carousel-caption">
@@ -41,7 +40,7 @@
         </div>
         <div class="item">
       <%--     <img data-src="Content/images/lake%20taupo%20NZ.JPG:Third slide" alt="Third slide"> --%>
-            <img src="Content/images/wedding_bridge_groom.JPG" /> <%-- Third picture --%>
+            <img src="Content/images/romantic_couple_192454.JPG" /> <%-- Third picture --%>
             
           <div class="container">
             <div class="carousel-caption">
