@@ -224,13 +224,6 @@ table {
   border-spacing: 0;
 }
 
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin:320px ; /* Space out the Bootstrap <hr> more */
-}
-
 /* Thin out the marketing headings */
 .featurette-heading {
   font-weight: 300;
@@ -331,7 +324,7 @@ body {
     color: #333333;
 }
 .newBackground
-{                           /*new Background*/
+{                           /*רקע */
   /*background-color: #ffffff;*/
   background-image:url();
   opacity:0.4;
@@ -1718,6 +1711,24 @@ input[type="checkbox"]:focus {
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   height: auto;
+}
+.submit { /*  הוספה  */
+font: 200% 'Jenna Sue', arial, sans-serif;
+border: 0;
+width: 250px;
+margin: 0 0 0 500px;
+height: 100px;
+padding: 0 0 3px 0;
+cursor: pointer;
+background: #333333;
+background: -moz-linear-gradient(#63859c, #474267);
+background: -o-linear-gradient(#9ב8563, #675B42);
+background: -webkit-linear-gradient(#5373b5, #1d365a);
+border: 1px solid #483F2C;
+border-radius: 7px 7px 7px 7px;
+-moz-border-radius: 7px 7px 7px 7px;
+-webkit-border: 7px 7px 7px 7px;
+color: #ddd;
 }
 
 .form-control:-moz-placeholder {
@@ -6082,7 +6093,7 @@ body.modal-open,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  height: 550px ;
+  height: 500px ;
   max-width: 100% ; /*100%*/
   line-height: 1;
   /*opacity:0.4;*/

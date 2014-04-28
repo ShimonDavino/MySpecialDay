@@ -19,7 +19,7 @@
 
 </head>
 
-<body style="background-image: url('Content/images/water2.jpg')";>
+<body style="background-image: url("http://i1374.photobucket.com/albums/ag414/assafbt/water2_zpsafe4daaa.jpg")";>
     
     <form runat="server">
       

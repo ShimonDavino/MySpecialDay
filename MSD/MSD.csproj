@@ -173,9 +173,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="main11.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="UserRegistration.aspx" />
+    <Content Include="USsimple\EventProfile111.aspx" />
+    <Content Include="USsimple\main111.aspx" />
     <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -318,13 +319,6 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="main11.aspx.cs">
-      <DependentUpon>main11.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="main11.aspx.designer.cs">
-      <DependentUpon>main11.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -338,6 +332,20 @@
     </Compile>
     <Compile Include="UserRegistration.aspx.designer.cs">
       <DependentUpon>UserRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USsimple\EventProfile111.aspx.cs">
+      <DependentUpon>EventProfile111.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USsimple\EventProfile111.aspx.designer.cs">
+      <DependentUpon>EventProfile111.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="USsimple\main111.aspx.cs">
+      <DependentUpon>main111.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="USsimple\main111.aspx.designer.cs">
+      <DependentUpon>main111.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -358,6 +366,7 @@
     <Folder Include="App_Browsers\" />
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="USsimple\Account\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

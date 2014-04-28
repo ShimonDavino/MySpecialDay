@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MSD
 {
-    public partial class _Default : Page
+    public partial class main111 : Page
     {
         protected void Page_Load1(object sender, EventArgs e)
         {

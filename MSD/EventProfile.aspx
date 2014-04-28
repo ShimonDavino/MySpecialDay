@@ -19,17 +19,24 @@
         {
             width:200px;
         }
+        .auto-style1 {
+            width: 313px;
+        }
+        .auto-style2 {
+            width: 28px;
+        }
     </style>
-    <h1>Creat Event Registration page </h1><br />
+    <h1>ברוך הבא לדף555 האירוע שלך </h1><br />
+    <asp:Label ID="lblEventUser" Text="ברוך הבא לדף האירוע שלך" runat="server" Font-Size="Large" Font-Bold="True"  /><br /><br /><br />
     <form  id="ceateEvent" method="post" action="main.aspx"  style="background-color:azure">
     <div class="row">
       <div class="col-md-4">
-        <table border="2" >
+        <table border="0" >
             <tr style="height:400px">
-                <td>
-                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/wedding_zps0698efb7.jpg">
+                <td class="auto-style1">
+                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/things-brides-love-mason-jar-wedding-reception-decor-centerpieces-chalkboard-table-numbersoriginal_zps3459bba5.jpeg">
                 </td>
-                <td>
+                <td class="auto-style2">
                     <table>
 
 
@@ -44,28 +51,30 @@
 
      <div class="col-md-4">
      <%-- <a class="btn btn-default" href="https://github.com/ShimonDavino/MySpecialDay/wiki/Team-page"> more &raquo;</a>--%>
-         <div class="button big-btn">הסעות וטרמפים</div>
+         <input class="submit" type="submit" name="name" value="הסעות וטרמפים" onclick="">
+          
           
      </div>
     <div class="col-md-4">
+        <input class="submit" type="submit" name="name" value="אישורי הגעה">
        
-       <div class="button big-btn">אישורי הגעה</div>
   
     </p></div><br>
     <div class="col-md-4">
-          <div class="button big-btn">הודעות וטיפים</div>
+       <input class="submit" type="submit" name="name" value="הודעות וטיפים">
+          
          
     </div>
     <div class="col-md-4">
-         <div class="button big-btn">רשימת מתנות</div>
+        <input class="submit" type="submit" name="name" value="רשימת מתנות">
         
     </p></div><br>
      <div class="col-md-4">
-          <div class="button big-btn">העלה סרטון ברכה</div>
+          <input class="submit" type="submit" name="name" value="העלה סרטון ברכה">
          
      </div>
  <div class="col-md-4">
-      <div class="button big-btn">העלה ברכה מעוצבת</div>
+     <input class="submit" type="submit" name="name" value="העלה ברכה מעוצבת">
       
     </div></p><br>
 

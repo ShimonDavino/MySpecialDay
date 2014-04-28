@@ -9,7 +9,7 @@ namespace MSD
 {
     public partial class EventProfile : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load1(object sender, EventArgs e)
         {
             string user;
             if (!IsPostBack) //טעינת דף חדש

@@ -17,7 +17,7 @@
       </ol>
       <div class="carousel-inner"  >
         <div class="item active">
-            <img src="Content/images/MY%20SPECIAL%20DAY%20logo%20big.jpg"  />   <%-- first picture --%>
+            <img src="http://i1374.photobucket.com/albums/ag414/assafbt/MYSPECIALDAYlogobig_zpsf1f9e34e.jpg"  />   <%-- first picture --%>
             
           <div class="container">
             <div class="carousel-caption">
@@ -29,7 +29,7 @@
         </div>
         <div class="item">
         <%--    <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide"> --%>
-            <img src="Content/images/wedding_gazebo_by_the_sea_204277.JPG" /> <%-- Second picture --%>
+            <img src="http://i1374.photobucket.com/albums/ag414/assafbt/wedding_gazebo_by_the_sea_204277_zps3e31e7ca.jpg" /> <%-- Second picture --%>
             
           <div class="container">
             <div class="carousel-caption">
@@ -41,7 +41,7 @@
         </div>
         <div class="item">
       <%--     <img data-src="Content/images/lake%20taupo%20NZ.JPG:Third slide" alt="Third slide"> --%>
-            <img src="Content/images/wedding_bridge_groom.JPG" /> <%-- Third picture --%>
+            <img src="http://i1374.photobucket.com/albums/ag414/assafbt/wedding_bridge_groom_zps6f8bbeac.jpg" /> <%-- Third picture --%>
             
           <div class="container">
             <div class="carousel-caption">
@@ -55,8 +55,9 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
-        
-       
+        <a href="USsimple/EventProfile.aspx">USsimple/EventProfile.aspx</a></p>
+        <a href="USsimple/main111.aspx">USsimple/main111.aspx</a></p>
+        <a href="EventProfile.aspx">EventProfile.aspx</a></p>
     </body> 
 </asp:Content>
 
