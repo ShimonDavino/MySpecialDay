@@ -26,7 +26,7 @@ namespace MSD
 
              // Determine alternate view
              AlternateView = isMobile ? "Desktop" : "Mobile";
-            /*
+            
                    // Create switch URL from the route, e.g. ~/__FriendlyUrls_SwitchView/Mobile?ReturnUrl=/Page
                    var switchViewRouteName = "AspNet.FriendlyUrls.SwitchView";
                    var switchViewRoute = RouteTable.Routes[switchViewRouteName];
@@ -39,7 +39,7 @@ namespace MSD
                    var url = GetRouteUrl(switchViewRouteName, new { view = AlternateView, __FriendlyUrls_SwitchViews = true });
                    url += "?ReturnUrl=" + HttpUtility.UrlEncode(Request.RawUrl);
                    SwitchUrl = url;
-            */
+            
         }
     }
 }

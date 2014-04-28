@@ -29,7 +29,7 @@
     <h1>ברוך הבא לדף555 האירוע שלך </h1><br />
     <asp:Label ID="lblEventUser" Text="ברוך הבא לדף האירוע שלך" runat="server" Font-Size="Large" Font-Bold="True"  /><br /><br /><br />
     <form  id="ceateEvent" method="post" action="main.aspx"  style="background-color:azure">
-    <div class="row">
+    
       <div class="col-md-4">
         <table border="0" >
             <tr style="height:400px">
