@@ -20,7 +20,7 @@
             width:200px;
         }
         .auto-style1 {
-            width: 313px;
+            width: 200px;
         }
         .auto-style2 {
             width: 28px;
