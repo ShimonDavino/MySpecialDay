@@ -32,11 +32,25 @@ namespace MSD.Account
                 ApplicationUser user = manager.Find(UserName.Text, Password.Text);
                 if (user != null)
                 {
+            /* addition for iter1*/    
+                if ((UserName.Text.Equals(1111)) || (UserName.Text.Equals(1112)))
+                    {
+                        FailureText.Text = "good username.";
+                        if (Password.Text.Equals(123123))
+                        {
+                            FailureText.Text = "wellcome.";
+                            RegisterHyperLink.NavigateUrl += "?ReturnUrl=EventProfile?user=" + UserName;
+                         
+                        }
+                    }
+            /*end addition for iter1*/    
+                    
                     IdentityHelper.SignIn(manager, user, RememberMe.Checked);
                     IdentityHelper.RedirectToReturnUrl(Request.QueryString["~/UserProfile.aspx"], Response);
                 }
                 else
                 {
+                    
                     FailureText.Text = "Invalid username or password.";
                     ErrorMessage.Visible = true;
                 }

@@ -1,14 +1,17 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="MSD.Contact" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" >
+    
+    <h2 dir="rtl">צרו איתנו קשר בכל נושא</h2>
+    <div class="row" dir="rtl">
+    <h3></h3>
     <address>
         
     </address>
 
     <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        <strong>מצאת תקלה?</strong>   <a href="mailto:Support@example.com">שלח לנו מייל</a><br />
+        <strong>לאנשי שיווק ומפרסמים:</strong> <a href="mailto:asssafbt@gmail.com">שלחו מייל לכאן</a>
     </address>
+        </div>
 </asp:Content>

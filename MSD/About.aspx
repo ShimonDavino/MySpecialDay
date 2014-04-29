@@ -1,21 +1,10 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="MSD.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>
+    <h2 dir="rtl">אודות</h2>
+  
    <div class="row">
-     <div class="col-lg-4">
-          <img class="img-circle" data-src="Content/images/lake%20taupo%20NZ.JPG" alt="Generic placeholder image">
-        
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-
-    <div class="row"> 
-       
-        <div dir="rtl" class="col-md-4">
+     <div dir="rtl" class="col-md-4">
             <h2>על הקורס</h2>
             <p>
                 
