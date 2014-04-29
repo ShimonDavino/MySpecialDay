@@ -10,8 +10,8 @@
 
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <style type="text/css">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server" >
+    <style type="text/css" >
         .selectDefualtOp {
             display: none;
             width:200px;
@@ -19,7 +19,7 @@
         }
         h1
         {
-            color:red;
+            color:blue;
         }
         tr {
             height:50px;
@@ -29,50 +29,51 @@
             width:200px;
         }
     </style>
-    <h1>Creat Event Registration page </h1><br />
-    <form  id="ceateEvent" method="post" action="main.aspx" >
-        <table  border="0">
+
+    <h1> יצירת אירוע </h1><br />
+    <form id="ceateEvent" method="post" action="main.aspx" dir="rtl" >
+        <table  border="0" dir="rtl">
             <tr>
-                <td  style="width: 200px">Event type: </td>
+                <td  style="width: 200px">סוג האירוע:  </td>
                 <td>
                     <select form="ceateEvent">
-                        <option selected="true" class="selectDefualtOp">Select an option</option>
-                        <option>Wedding</option>
-                        <option>Brit</option>
-                        <option>Brita</option>
-                        <option>Bar Mitzva</option>
-                        <option>Bat Mitzva</option>
-                        <option>other</option>
+                        <option selected="" class="selectDefualtOp">בחר</option>
+                        <option>חתונה</option>
+                        <option>ברית</option>
+                        <option>בריתה</option>
+                        <option>בר מצווה</option>
+                        <option>בת מצווה</option>
+                        <option>אחר</option>
                     </select>
                 </td>
             </tr>
             <tr>
-                <td>First Name(event owner):    </td>
+                <td>שם פרטי (בעל האירוע):    </td>
                 <td><input type="text" /></td>
             </tr>
             <tr>
-                <td>Last Name(event owner):    </td>
+                <td>שם משפחה (בעל האירוע):    </td>
                 <td><input type="text" /></td>
             </tr>  
             <tr>
-                <td>First Name(suppose):    </td>
+                <td>שם פרטי (בן הזוג):    </td>
                 <td><input type="text" /></td>
             </tr>
             <tr>
-                <td>Last Name(suppose):    </td>
+                <td>שם משפחה (בן הזוג):    </td>
                 <td><input type="text" /></td>
             </tr>          
             <tr>
-                <td>Event Date:    </td>
+                <td>תאריך האירוע:    </td>
                 <td><input type="datetime" /></td>
             </tr>            <tr>
-                <td>Event Place:    </td>
+                <td>מיקום האירוע:    </td>
                 <td><input type="text" /></td>
             </tr> 
             <tr >
                <td>
-                <input type="submit" value="send" herf="EventProfile.aspx" style="width:50px" />
-                <a href="EventProfile.aspx">send</a>
+                <%--  <input type="submit" value="שלח" style="width:50px" /> --%>
+                <a href="EventProfile.aspx">שלח</a>
                </td>
                 
             </tr>           

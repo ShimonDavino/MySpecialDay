@@ -33,16 +33,30 @@ namespace MSD.Account
                 if (user != null)
                 {
             /* addition for iter1*/    
-                if ((UserName.Text.Equals(1111)) || (UserName.Text.Equals(1112)))
+                if ((UserName.Text.Equals(1112)))
                     {
                         FailureText.Text = "good username.";
+                        ErrorMessage.Visible = true;
                         if (Password.Text.Equals(123123))
                         {
                             FailureText.Text = "wellcome.";
+                            ErrorMessage.Visible = true;
                             RegisterHyperLink.NavigateUrl += "?ReturnUrl=EventProfile?user=" + UserName;
                          
                         }
                     }
+                if ( (UserName.Text.Equals(1112)))
+                {
+                    FailureText.Text = "good username.";
+                    ErrorMessage.Visible = true;
+                    if (Password.Text.Equals(123123))
+                    {
+                        FailureText.Text = "wellcome.";
+                        ErrorMessage.Visible = true;
+                        RegisterHyperLink.NavigateUrl += "?ReturnUrl=EventProfile?user=" + UserName;
+
+                    }
+                }
             /*end addition for iter1*/    
                     
                     IdentityHelper.SignIn(manager, user, RememberMe.Checked);
