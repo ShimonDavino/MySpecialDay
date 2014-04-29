@@ -20,33 +20,36 @@
             width:200px;
         }
         .auto-style1 {
-            width: 200px;
+            width: 100px;
         }
         .auto-style2 {
             width: 28px;
         }
     </style>
-    <h1>ברוך הבא לדף555 האירוע שלך </h1><br />
+    <div dir="rtl" class="row">
+        
+    <h1 >ברוך הבא לדף555 האירוע שלך </h1><br />
     <asp:Label ID="lblEventUser" Text="ברוך הבא לדף האירוע שלך" runat="server" Font-Size="Large" Font-Bold="True"  /><br /><br /><br />
     <form  id="ceateEvent" method="post" action="main.aspx"  style="background-color:azure">
+        </div>
      <div class="row"> 
-      <div class="col-md-4">
+      <div class="col-md-2">
         <table border="0" >
             <tr style="height:400px">
                 <td class="auto-style1">
-                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/things-brides-love-mason-jar-wedding-reception-decor-centerpieces-chalkboard-table-numbersoriginal_zps3459bba5.jpeg">
+                  <%-- <img src="http://i1374.photobucket.com/albums/ag414/assafbt/things-brides-love-mason-jar-wedding-reception-decor-centerpieces-chalkboard-table-numbersoriginal_zps3459bba5.jpeg"> --%>
                 </td>
                 <td class="auto-style2">
                     <table>
 
-
+                        <img src="http://i1374.photobucket.com/albums/ag414/assafbt/images23_zps1e3e8c6c.jpg">
                     </table>
 
                 </td>
             </tr>
         </table>
           </div>
-         </div>
+         
     </form>
 
     
@@ -79,6 +82,6 @@
      <input class="submit" type="submit" name="name" value="העלה ברכה מעוצבת">
       
     </div></p><br>
-
+    </div>
 
    </asp:Content>

@@ -56,11 +56,7 @@
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
       
-        <div class="row">
-          <a href="USsimple/EventProfile.aspx">USsimple/EventProfile.aspx</a></p>
-        <a href="USsimple/main111.aspx">USsimple/main111.aspx</a></p>
-        <a href="EventProfile.aspx">EventProfile.aspx</a></p>
-          </div>
+       
     </body> 
 </asp:Content>
 

@@ -2,7 +2,10 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2 dir="rtl">אודות</h2>
-  
+   <div class="row" dir="rtl"
+    <a href="EventProfile.aspx"></a>
+    <a href="EventProfile.aspx">אירוע לדוגמא</a>
+    </div>
    <div class="row">
      <div dir="rtl" class="col-md-4">
             <h2>על הקורס</h2>
