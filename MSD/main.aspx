@@ -3,12 +3,13 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
   
     
-    <body>
+    
+        <%--body --%>
         
         <!-- Carousel
     ================================================== -->
     
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" align="center">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -56,7 +57,7 @@
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
       
-       
-    </body> 
+       <%--/body --%>
+    
 </asp:Content>
 
