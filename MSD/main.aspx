@@ -4,7 +4,7 @@
   
     
     
-        <%--body --%>
+        <%-- body --%>
         
         <!-- Carousel
     ================================================== -->
@@ -22,9 +22,14 @@
             
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+             
+              <%-- Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules. --%>
+                <p dir="rtl">מרגישים שאתם צריכים לעשות סדר באירוע מאוד משמעותי עבורם? </p>
+                <p dir="rtl">רוצים ליצור קשר עם כל המוזמנים שלכם בקליק אחד?</p>
+                <p dir="rtl"> רוצים לקבל מזכרת מרגשת בסוף האירוע?</p>
+                <h3 dir="rtl"> אנחנו פה בדיוק בשביל זה </h3>
+                <h3> My Special Day </h3>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">הירשם עוד היום</a></p>
             </div>
           </div>
         </div>
@@ -34,9 +39,9 @@
             
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <h1 dir="rtl">אנחנו מזמינים אתכם להתרשם</h1>
+              <p> </p>
+              <p><a class="btn btn-lg btn-primary" href="EventProfile.aspx" role="button">אירוע לדוגמא</a></p>
             </div>
           </div>
         </div>
@@ -46,9 +51,9 @@
             
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <h1 dir="rtl"> עוד לא נרשמת? </h1>
+              <p> </p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">הירשם עכשיו</a></p>
             </div>
           </div>
         </div>
@@ -57,7 +62,7 @@
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
       
-       <%--/body --%>
+       <%--body --%>
     
 </asp:Content>
 
