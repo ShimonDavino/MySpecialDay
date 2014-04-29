@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Special Day - <%: Page.Title %></title>
-
+    
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
@@ -75,8 +75,9 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav"> 
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">שלום, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/UserProfile.aspx" title="Manage your account">שלום, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
+                                    
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/main" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
                             </ul>

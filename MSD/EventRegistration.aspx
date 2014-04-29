@@ -71,8 +71,10 @@
             </tr> 
             <tr >
                <td>
-                <input type="submit" value="send" style="width:50px" />
+                <input type="submit" value="send" herf="EventProfile.aspx" style="width:50px" />
+                <a href="EventProfile.aspx">send</a>
                </td>
+                
             </tr>           
         </table>
     </form>

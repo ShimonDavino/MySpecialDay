@@ -29,7 +29,8 @@
                 <p dir="rtl"> רוצים לקבל מזכרת מרגשת בסוף האירוע?</p>
                 <h3 dir="rtl"> אנחנו פה בדיוק בשביל זה </h3>
                 <h3> My Special Day </h3>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">הירשם עוד היום</a></p>
+                <p><a class="btn btn-lg btn-primary" href="Account/Login.aspx" role="button">הירשם עוד היום</a></p>
+               
             </div>
           </div>
         </div>
