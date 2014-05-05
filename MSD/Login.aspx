@@ -17,19 +17,20 @@
                         </p>
                     </asp:PlaceHolder>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">שם משתמש</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="UserNameTextBox" CssClass="col-md-2 control-label">שם משתמש</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="UserName" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
-                                CssClass="text-danger" ErrorMessage="The user name field is required." />
+                            <asp:TextBox runat="server" ID="UserNameTextBox" CssClass="form-control"  />  
+                            <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="UserNameTextBox"
+                                CssClass="text-danger" ErrorMessage="The user name field is required." />--%>
                         </div>
                     </div>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">סיסמה</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="PasswordTextBox" CssClass="col-md-2 control-label">סיסמה</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
+                            <asp:TextBox runat="server" ID="PasswordTextBox" TextMode="Password" CssClass="form-control" />
+                            <%--<asp:RequiredFieldValidator runat="server" ControlToValidate="PasswordTextBox" CssClass="text-danger" ErrorMessage="The password field is required." />--%>
                         </div>
+                        <asp:Label ID="msgLabel" runat="server" CssClass="errMsg"></asp:Label>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
@@ -41,15 +42,22 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-default" />
+                            <asp:Button runat="server" ID="LogInUser" OnClick="LogIn" Text="Log in" CssClass="btn btn-default" />
                         </div>
+                      <br />
+                        
                     </div>
+                    
                 </div>
+                <p>
+                    
+                </p>
                 <p>
                     <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">בצע רישום</asp:HyperLink>
                     במידה ואין לך שם משתמש
                 </p>
             </section>
+            
         </div>
 
         <div class="col-md-4">

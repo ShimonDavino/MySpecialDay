@@ -28,7 +28,8 @@
     </style>
     <div dir="rtl" class="row">
         
-    <h1 > 555 </h1><br />
+    <%--<h1 > 555 </h1><br />--%>
+     <asp:Label ID="EventOfNames" runat="server" Font-Size="Large" Font-Bold="True"  /><br/><br/>
     <asp:Label ID="lblEventUser" Text="ברוך הבא לדף האירוע שלך" runat="server" Font-Size="Large" Font-Bold="True"  /><br/><br/><br/>
     <form  id="ceateEvent" method="post" action="main.aspx"  style="background-color:azure">
      <div class="row"> 

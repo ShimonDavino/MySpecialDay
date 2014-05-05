@@ -70,7 +70,7 @@
                          <%-- <ul class="nav navbar-nav navbar-right"> --%>  
                             <ul class="nav navbar-nav"> 
                                 <li><a runat="server" href="~/Account/Register">רישום</a></li>
-                                <li><a runat="server" href="~/Account/Login">כניסה</a></li>
+                                <li><a runat="server" href="Login.aspx">כניסה</a></li>  <%--~/Login--%>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>

@@ -11,30 +11,32 @@ namespace MSD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string user;
-            if (!IsPostBack) //טעינת דף חדש
-            {
-                user = Request.QueryString["user"]; //לקיחת ערך הפרמטר user משורת הכתובת
-                if (user != null)
-                {
-                    // בדיקה אם היוזר קיים ושינוי הכותרת קטע זמני עד שיהיה לנו את מסד הנתוני ואז נטען פרטים משם
-                    if (user.Equals("1111"))
-                    {
-                        lblEventUser.Text = "ברוך הבא לדף האירוע של שלומי ושלומית";
-                        //אפשרות לשנות את התמונה בהתאם לאירוע הקיים
-                        //imgEvent.ImageUrl = "כתובת התמונה";
-                    }
-                    else if (user.Equals("1112"))
-                    {
-                        lblEventUser.Text = "ברוך הבא לדף האירוע של איציק";
-                        //imgEvent.ImageUrl = "כתובת התמונה";  
-                    }
-                }
-            }
-            else
-            {
+            string EventUserString;
+            EventUserString = Request.QueryString["eventOf"];
+            EventOfNames.Text = EventUserString;
+            //if (!IsPostBack) //טעינת דף חדש
+            //{
+            //    user = Request.QueryString["user"]; //לקיחת ערך הפרמטר user משורת הכתובת
+            //    if (user != null)
+            //    {
+            //        // בדיקה אם היוזר קיים ושינוי הכותרת קטע זמני עד שיהיה לנו את מסד הנתוני ואז נטען פרטים משם
+            //        if (user.Equals("1111"))
+            //        {
+            //            lblEventUser.Text = "ברוך הבא לדף האירוע של שלומי ושלומית";
+            //            //אפשרות לשנות את התמונה בהתאם לאירוע הקיים
+            //            //imgEvent.ImageUrl = "כתובת התמונה";
+            //        }
+            //        else if (user.Equals("1112"))
+            //        {
+            //            lblEventUser.Text = "ברוך הבא לדף האירוע של איציק";
+            //            //imgEvent.ImageUrl = "כתובת התמונה";  
+            //        }
+            //    }
+            //}
+            //else
+            //{
 
-            }
+            //}
         }
     }
 }
