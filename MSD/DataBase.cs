@@ -26,15 +26,16 @@ namespace MSD
 
         public bool SuccessLogin { get; private set; }
 
-        public void CheckUser(string userName, string password)
+        public void CheckUser(string userName, int password)
         {
             
-            con.Open();
+            con.Open(); // open connection
+
 
             cmd = new SqlCommand("ValidateUser", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@Username", SqlDbType.NChar).Value = userName;
-            cmd.Parameters.Add("@Password", SqlDbType.NChar).Value = password;
+            cmd.Parameters.Add("@UserName", SqlDbType.Int).Value = userName;
+            cmd.Parameters.Add("@UserPassword", SqlDbType.Int).Value = password;
             dr = cmd.ExecuteReader();
             dr.Read();
 
@@ -45,7 +46,42 @@ namespace MSD
 
             con.Close();
         }
-        
+
+
+        public void RegisterUser(string UserName, int Password)
+        {
+
+            con.Open();
+
+            cmd = new SqlCommand("RegisterUser", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@UserName", SqlDbType.NChar).Value = UserName;
+            cmd.Parameters.Add("@UserPassword", SqlDbType.Int).Value = Password;
+            int affectedRows = cmd.ExecuteNonQuery();
+            con.Close();
+
+            if (affectedRows>0)
+                SuccessLogin = true;
+            else
+                SuccessLogin = false;
+
+            con.Close();
+        }
+
+        public bool CheckIfUserIsFree(string UserName, int UserPassword)
+        {
+            con.Open();
+            cmd = new SqlCommand("SELECT  UserName from UserEvents WHERE UserName = @UserName", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@UserName", SqlDbType.NChar).Value = UserName;
+            dr = cmd.ExecuteReader();
+            bool hasRows = dr.HasRows;
+            con.Close();
+            if (hasRows)
+                return true;
+            else
+                return false;
+        }
     }
 }
 

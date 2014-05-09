@@ -25,9 +25,9 @@ namespace MSD.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-            msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
+            //msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
             DataBase db = new DataBase();
-            db.CheckUser(UserNameTextBox.Text, PasswordTextBox.Text);
+            db.CheckUser(UserNameTextBox.Text, int.Parse(PasswordTextBox.Text));
             string eventName = "?eventOf=shaul AND Avital Weeding";
             if (db.SuccessLogin)
             {
