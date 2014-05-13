@@ -42,7 +42,7 @@
             <div class="carousel-caption">
               <h1 dir="rtl">אנחנו מזמינים אתכם להתרשם</h1>
               <p> </p>
-              <p><a class="btn btn-lg btn-primary" href="EventProfile.aspx" role="button">אירוע לדוגמא</a></p>
+              <p><a class="btn btn-lg btn-primary" href="EventProfile.aspx?eventId=1111" role="button">אירוע לדוגמא</a></p>
             </div>
           </div>
         </div>
