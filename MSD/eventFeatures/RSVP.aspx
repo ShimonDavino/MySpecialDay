@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Confirm" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Confirm.aspx.cs" Inherits="MSD.Confirm" %>
+﻿<%@ Page Title="Confirm" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Rsvp.aspx.cs" Inherits="MSD.Rsvp" %>
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">

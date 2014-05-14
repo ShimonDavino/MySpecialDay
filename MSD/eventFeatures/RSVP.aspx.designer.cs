@@ -10,7 +10,7 @@
 namespace MSD {
     
     
-    public partial class Confirm {
+    public partial class Rsvp {
         
         /// <summary>
         /// eventNameLiteral control.

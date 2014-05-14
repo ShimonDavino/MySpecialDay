@@ -10,78 +10,69 @@
 namespace MSD {
     
     
-    public partial class EventProfile {
+    public partial class Rsvp {
         
         /// <summary>
-        /// EventOfNames control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EventOfNames;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblEventUser control.
+        /// ErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEventUser;
+        protected global::System.Web.UI.WebControls.PlaceHolder ErrorMessage;
         
         /// <summary>
-        /// shuttlesButton control.
+        /// FailureText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button shuttlesButton;
+        protected global::System.Web.UI.WebControls.Literal FailureText;
         
         /// <summary>
-        /// rsvpButton control.
+        /// ConfirmNameTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button rsvpButton;
+        protected global::System.Web.UI.WebControls.TextBox ConfirmNameTextBox;
         
         /// <summary>
-        /// messageButton control.
+        /// AmountTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button messageButton;
+        protected global::System.Web.UI.WebControls.TextBox AmountTextBox;
         
         /// <summary>
-        /// giftButton control.
+        /// msgLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button giftButton;
+        protected global::System.Web.UI.WebControls.Label msgLabel;
         
         /// <summary>
-        /// movieButton control.
+        /// ConfirmButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button movieButton;
-        
-        /// <summary>
-        /// blessingButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button blessingButton;
+        protected global::System.Web.UI.WebControls.Button ConfirmButton;
     }
 }

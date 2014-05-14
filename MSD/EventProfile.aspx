@@ -55,28 +55,26 @@
 
 
                 <div class="col-md-4">
-
-                    <input class="submit" type="submit" name="name" value="הסעות וטרמפים" onclick="">
+                    <asp:Button runat="server" CssClass="submit" ID="shuttlesButton" Text="הסעות וטרמפים" />
                 </div>
                 <div class="col-md-4">
-
-                    <asp:Button runat="server" CssClass="submit" ID="confirmArrive" Text="אישורי הגעה" OnClick="Confirm_Click" />
+                    <asp:Button runat="server" CssClass="submit" ID="rsvpButton" Text="אישורי הגעה" OnClick="rsvpButton_Click" />
                     </p>
                 </div>
                 <br>
                 <div class="col-md-4">
-                    <input class="submit" type="submit" name="name" value="הודעות וטיפים">
+                    <asp:Button runat="server" CssClass="submit" ID="messageButton" Text="הודעות וטיפים" />
                 </div>
                 <div class="col-md-4">
-                    <input class="submit" type="submit" name="name" value="רשימת מתנות">
+                    <asp:Button runat="server" CssClass="submit" ID="giftButton" Text="רשימת מתנות" />
                     </p>
                 </div>
                 <br>
                 <div class="col-md-4">
-                    <input class="submit" type="submit" name="name" value="העלה סרטון ברכה">
+                    <asp:Button runat="server" CssClass="submit" ID="movieButton" Text="העלאת סרטון ברכה" />
                 </div>
                 <div class="col-md-4">
-                    <input class="submit" type="submit" name="name" value="העלה ברכה מעוצבת">
+                    <asp:Button runat="server" CssClass="submit" ID="blessingButton" Text="העלאת ברכה מעוצבת" />
                 </div>
                 </p><br>
             </div>

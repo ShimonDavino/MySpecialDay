@@ -23,7 +23,12 @@ namespace MSD
                 {
                     if(Application[eventId] == null)
                     {
-                        confirmArrive.Enabled = false;
+                        rsvpButton.Enabled = false;
+                        shuttlesButton.Enabled = false;
+                        giftButton.Enabled = false;
+                        messageButton.Enabled = false;
+                        movieButton.Enabled = false;
+                        blessingButton.Enabled = false;
                         EventOfNames.Text = "שגיאה בטעינת הדף אירוע לא קיים";
                     }
                     EventOfNames.Text = "האירוע של " + ((Event)Application[eventId]).EventString;
@@ -32,8 +37,12 @@ namespace MSD
                 }
                 else
                 {
-                    confirmArrive.Enabled = false;
-                    
+                    rsvpButton.Enabled = false;
+                    shuttlesButton.Enabled = false;
+                    giftButton.Enabled = false;
+                    messageButton.Enabled = false;
+                    movieButton.Enabled = false;
+                    blessingButton.Enabled = false;
                     EventOfNames.Text = "שגיאה בטעינת הדף אירוע לא קיים";
                 }
             }
@@ -43,12 +52,12 @@ namespace MSD
             }
         }
 
-        protected void Confirm_Click(object sender, EventArgs e)
+        protected void rsvpButton_Click(object sender, EventArgs e)
         {
             try
             {
                 string eventId = Request.QueryString["eventId"];
-                Page.Response.Redirect("Confirm.aspx?eventId=" + eventId);
+                Page.Response.Redirect("eventFeatures/Confirm.aspx?eventId=" + eventId);
             }
             catch (Exception ex)
             {
