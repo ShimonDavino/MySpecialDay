@@ -57,7 +57,7 @@ namespace MSD
             try
             {
                 string eventId = Request.QueryString["eventId"];
-                Page.Response.Redirect("eventFeatures/Confirm.aspx?eventId=" + eventId);
+                Page.Response.Redirect("~/eventFeatures/Rsvp.aspx?eventId=" + eventId);
             }
             catch (Exception ex)
             {
