@@ -49,7 +49,7 @@ namespace MSD
                 if(Int32.TryParse(AmountTextBox.Text.ToString(),out amount)){
                     string eventId =Request.QueryString["eventId"];
                     ((Event)Application[eventId]).AddInvite(ConfirmNameTextBox.Text.ToString(), amount);
-                    Page.Response.Redirect("EventProfile.aspx?eventId="+ eventId);
+                    Page.Response.Redirect("~/EventProfile.aspx?eventId="+ eventId);
                 }
                 else
                 {

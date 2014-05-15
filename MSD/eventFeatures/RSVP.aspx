@@ -35,6 +35,7 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button runat="server" ID="ConfirmButton" Text="אישור" CssClass="btn btn-default" OnClick="ConfirmButton_Click" />
+                            
                         </div>
                       <br />
                         

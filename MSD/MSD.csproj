@@ -146,6 +146,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="eventFeatures\GiftList.aspx" />
+    <Content Include="eventFeatures\RsvpList.aspx" />
     <Content Include="eventFeatures\Rsvp.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Account\Manage.aspx" />
@@ -229,6 +231,20 @@
     <Compile Include="class\Event.cs" />
     <Compile Include="class\Gift.cs" />
     <Compile Include="class\Invite.cs" />
+    <Compile Include="eventFeatures\GiftList.aspx.cs">
+      <DependentUpon>GiftList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eventFeatures\GiftList.aspx.designer.cs">
+      <DependentUpon>GiftList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eventFeatures\RsvpList.aspx.cs">
+      <DependentUpon>RsvpList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eventFeatures\RsvpList.aspx.designer.cs">
+      <DependentUpon>RsvpList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="eventFeatures\Rsvp.aspx.cs">
       <DependentUpon>Rsvp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

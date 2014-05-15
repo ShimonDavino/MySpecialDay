@@ -19,9 +19,9 @@ namespace MSD
             if (!IsPostBack) //טעינת דף חדש
             {
                 string eventId = Request.QueryString["eventId"]; //לקיחת ערך הפרמטר user משורת הכתובת
-                if (eventId != null && eventId !="")
+                if (eventId != null)
                 {
-                    if(Application[eventId] == null)
+                    if (Application[eventId] == null)
                     {
                         rsvpButton.Enabled = false;
                         shuttlesButton.Enabled = false;
@@ -31,8 +31,11 @@ namespace MSD
                         blessingButton.Enabled = false;
                         EventOfNames.Text = "שגיאה בטעינת הדף אירוע לא קיים";
                     }
-                    EventOfNames.Text = "האירוע של " + ((Event)Application[eventId]).EventString;
-                    // בדיקה אם היוזר קיים ושינוי הכותרת קטע זמני עד שיהיה לנו את מסד הנתוני ואז נטען פרטים משם
+                    else
+                    {
+                        EventOfNames.Text = "האירוע של " + ((Event)Application[eventId]).EventString;
+                        // בדיקה אם היוזר קיים ושינוי הכותרת קטע זמני עד שיהיה לנו את מסד הנתוני ואז נטען פרטים משם
+                    }
 
                 }
                 else
@@ -58,6 +61,19 @@ namespace MSD
             {
                 string eventId = Request.QueryString["eventId"];
                 Page.Response.Redirect("~/eventFeatures/Rsvp.aspx?eventId=" + eventId);
+            }
+            catch (Exception ex)
+            {
+                Exception E = ex;
+            }
+        }
+
+        protected void giftButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string eventId = Request.QueryString["eventId"];
+                Page.Response.Redirect("~/eventFeatures/GiftList.aspx?eventId=" + eventId);
             }
             catch (Exception ex)
             {

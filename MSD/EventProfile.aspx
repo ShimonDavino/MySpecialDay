@@ -53,21 +53,20 @@
 
 
 
-
                 <div class="col-md-4">
                     <asp:Button runat="server" CssClass="submit" ID="shuttlesButton" Text="הסעות וטרמפים" />
                 </div>
                 <div class="col-md-4">
                     <asp:Button runat="server" CssClass="submit" ID="rsvpButton" Text="אישורי הגעה" OnClick="rsvpButton_Click" />
-                    </p>
+                    
                 </div>
                 <br>
                 <div class="col-md-4">
                     <asp:Button runat="server" CssClass="submit" ID="messageButton" Text="הודעות וטיפים" />
                 </div>
                 <div class="col-md-4">
-                    <asp:Button runat="server" CssClass="submit" ID="giftButton" Text="רשימת מתנות" />
-                    </p>
+                    <asp:Button runat="server" CssClass="submit" ID="giftButton" Text="רשימת מתנות" OnClick="giftButton_Click" />
+                    
                 </div>
                 <br>
                 <div class="col-md-4">
@@ -76,7 +75,7 @@
                 <div class="col-md-4">
                     <asp:Button runat="server" CssClass="submit" ID="blessingButton" Text="העלאת ברכה מעוצבת" />
                 </div>
-                </p><br>
+                <br>
             </div>
             <footer>
                 <p></p>
