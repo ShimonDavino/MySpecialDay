@@ -10,78 +10,60 @@
 namespace MSD {
     
     
-    public partial class EventProfile {
+    public partial class blessing {
         
         /// <summary>
-        /// EventOfNames control.
+        /// eventNameLiteral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EventOfNames;
+        protected global::System.Web.UI.WebControls.Literal eventNameLiteral;
         
         /// <summary>
-        /// lblEventUser control.
+        /// msgLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEventUser;
+        protected global::System.Web.UI.WebControls.Label msgLabel;
         
         /// <summary>
-        /// shuttlesButton control.
+        /// ErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button shuttlesButton;
+        protected global::System.Web.UI.WebControls.PlaceHolder ErrorMessage;
         
         /// <summary>
-        /// rsvpButton control.
+        /// FailureText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button rsvpButton;
+        protected global::System.Web.UI.WebControls.Literal FailureText;
         
         /// <summary>
-        /// messageButton control.
+        /// fileuploadExcel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button messageButton;
+        protected global::System.Web.UI.WebControls.FileUpload fileuploadExcel;
         
         /// <summary>
-        /// giftButton control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button giftButton;
-        
-        /// <summary>
-        /// videoButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button videoButton;
-        
-        /// <summary>
-        /// blessingButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button blessingButton;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

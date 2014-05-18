@@ -39,7 +39,7 @@ namespace MSD
             {
 
             }
-        }
+        } // Page_Load
 
         protected void ConfirmButton_Click(object sender, EventArgs e)
         {
@@ -60,6 +60,7 @@ namespace MSD
             {
                 msgLabel.Text = "השדה שם מאשר ריק";
             }
-        }
+        } // ConfirmButton_Click
+
     }
 }

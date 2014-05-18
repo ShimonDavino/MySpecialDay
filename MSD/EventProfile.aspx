@@ -70,10 +70,10 @@
                 </div>
                 <br>
                 <div class="col-md-4">
-                    <asp:Button runat="server" CssClass="submit" ID="movieButton" Text="העלאת סרטון ברכה" />
+                    <asp:Button runat="server" CssClass="submit" ID="videoButton" Text="העלאת סרטון ברכה"  />
                 </div>
                 <div class="col-md-4">
-                    <asp:Button runat="server" CssClass="submit" ID="blessingButton" Text="העלאת ברכה מעוצבת" />
+                    <asp:Button runat="server" CssClass="submit" ID="blessingButton" Text="העלאת ברכה מעוצבת" OnClick="blessingButton_Click" />
                 </div>
                 <br>
             </div>

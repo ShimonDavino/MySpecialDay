@@ -27,8 +27,8 @@ namespace MSD
                         shuttlesButton.Enabled = false;
                         giftButton.Enabled = false;
                         messageButton.Enabled = false;
-                        movieButton.Enabled = false;
-                        blessingButton.Enabled = false;
+                   //     videoButton.Enabled = false;
+                   //     blessingButton.Enabled = false;
                         EventOfNames.Text = "שגיאה בטעינת הדף אירוע לא קיים";
                     }
                     else
@@ -44,8 +44,8 @@ namespace MSD
                     shuttlesButton.Enabled = false;
                     giftButton.Enabled = false;
                     messageButton.Enabled = false;
-                    movieButton.Enabled = false;
-                    blessingButton.Enabled = false;
+                  //  videoButton.Enabled = false;
+                  //  blessingButton.Enabled = false;
                     EventOfNames.Text = "שגיאה בטעינת הדף אירוע לא קיים";
                 }
             }
@@ -53,7 +53,7 @@ namespace MSD
             {
 
             }
-        }
+        } // Page_Load
 
         protected void rsvpButton_Click(object sender, EventArgs e)
         {
@@ -66,7 +66,7 @@ namespace MSD
             {
                 Exception E = ex;
             }
-        }
+        } // rsvpButton_Click
 
         protected void giftButton_Click(object sender, EventArgs e)
         {
@@ -79,6 +79,34 @@ namespace MSD
             {
                 Exception E = ex;
             }
-        }
+        } // giftButton_Click
+
+        protected void blessingButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string eventId = Request.QueryString["eventId"];
+                Page.Response.Redirect("~/eventFeatures/blessing.aspx?eventId=" + eventId);
+            }
+            catch (Exception ex)
+            {
+                Exception E = ex;
+            }
+        } // giftButton_Click
+
+        protected void videoButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string eventId = Request.QueryString["eventId"];
+                Page.Response.Redirect("~/eventFeatures/video.aspx?eventId=" + eventId);
+            }
+            catch (Exception ex)
+            {
+                Exception E = ex;
+            }
+        } // giftButton_Click
+
+
     }
 }
