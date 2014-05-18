@@ -150,6 +150,7 @@
     <Content Include="eventFeatures\GiftList.aspx" />
     <Content Include="eventFeatures\RsvpList.aspx" />
     <Content Include="eventFeatures\Rsvp.aspx" />
+    <Content Include="eventFeatures\video.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
@@ -259,6 +260,12 @@
     </Compile>
     <Compile Include="eventFeatures\Rsvp.aspx.designer.cs">
       <DependentUpon>Rsvp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eventFeatures\video.aspx.cs">
+      <DependentUpon>video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eventFeatures\video.aspx.designer.cs">
+      <DependentUpon>video.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -387,6 +394,7 @@
     <Folder Include="App_Browsers\" />
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="eventFeatures\Data\" />
     <Folder Include="USsimple\Account\" />
   </ItemGroup>
   <PropertyGroup>
