@@ -42,7 +42,7 @@ namespace MSD
 
        
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e) // local upload good
         {
             if ((fileuploadExcel.PostedFile != null) && (fileuploadExcel.PostedFile.ContentLength > 0))
             {
