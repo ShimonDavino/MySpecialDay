@@ -1,8 +1,8 @@
-﻿<%@ Page Title="Confirm" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Messages.aspx.cs" Inherits="MSD.Messages" %>
+﻿<%@ Page Title="Confirm" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Rides.aspx.cs" Inherits="MSD.Rides" %>
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2>הודעות וטיפים</h2>
+    <h2>הסעות וטרמפים</h2>
     <h2>
         <asp:Literal ID="eventNameLiteral" runat="server"></asp:Literal></h2>
     <div class="row">
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
 
-                <asp:TextBox ID="MessagesTextBox" runat="server" Height="200px" Width="600px" AutoPostBack="True" ReadOnly="True" TextMode="MultiLine" dir="rtl"></asp:TextBox>
+                <asp:TextBox ID="RidesTextBox" runat="server" Height="200px" Width="600px" AutoPostBack="True" ReadOnly="True" TextMode="MultiLine" dir="rtl"></asp:TextBox>
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="FromTextBox" CssClass="col-md-2 control-label">מאת:</asp:Label>

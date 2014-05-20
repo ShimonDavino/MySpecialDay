@@ -53,7 +53,7 @@
 
 
                 <div class="col-md-4">
-                    <asp:Button runat="server" CssClass="submit" ID="shuttlesButton" Text="הסעות וטרמפים" />
+                    <asp:Button runat="server" CssClass="submit" ID="shuttlesButton" Text="הסעות וטרמפים" OnClick="shuttlesButton_Click" />
                 </div>
                 <div class="col-md-4">
                     <asp:Button runat="server" CssClass="submit" ID="rsvpButton" Text="אישורי הגעה" OnClick="rsvpButton_Click" />

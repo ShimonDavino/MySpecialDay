@@ -11,6 +11,7 @@ namespace MSD
         private List<Gift> giftsList;
         private List<Invite> invitesList;
         private string messages;
+        private string rides;
         private int amountOfConfirm;
         private string eventName;
 
@@ -20,6 +21,7 @@ namespace MSD
             giftsList = new List<Gift>();
             invitesList = new List<Invite>();
             messages = "";
+            rides = "";
             amountOfConfirm = 0;
             eventName = name;
             
@@ -31,9 +33,20 @@ namespace MSD
             set { messages = value; }
         }
 
+        public string Rides
+        {
+            set { rides = value; }
+            get { return rides; }
+        }
+
+        public void addRide(string Content)
+        {
+            rides += Content + "\n";
+        }
+
         public void addMessage(string Content)
         {
-            messages+="\n"+Content;
+            messages+=Content+"\n";
         }
 
         public void addGift(string name, int amount)

@@ -118,6 +118,19 @@ namespace MSD
             {
                 Exception E = ex;
             }
+        }
+
+        protected void shuttlesButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string eventId = Request.QueryString["eventId"];
+                Page.Response.Redirect("~/eventFeatures/Rides.aspx?eventId=" + eventId);
+            }
+            catch (Exception ex)
+            {
+                Exception E = ex;
+            }
         } 
 
 
