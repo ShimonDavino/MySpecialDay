@@ -105,7 +105,20 @@ namespace MSD
             {
                 Exception E = ex;
             }
-        } // giftButton_Click
+        }
+
+        protected void messageButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string eventId = Request.QueryString["eventId"];
+                Page.Response.Redirect("~/eventFeatures/Messages.aspx?eventId=" + eventId);
+            }
+            catch (Exception ex)
+            {
+                Exception E = ex;
+            }
+        } 
 
 
     }

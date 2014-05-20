@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <style type="text/css">
+    2<style type="text/css">
         .selectDefualtOp {
             display: none;
             width: 200px;
@@ -26,8 +26,7 @@
         .auto-style2 {
             width: 28px;
         }
-    </style>
-    <div dir="rtl" class="row">
+    </style><div dir="rtl" class="row">
 
         <%--<h1 > 555 </h1><br />--%>
         <asp:Label ID="EventOfNames" runat="server" Font-Size="Large" Font-Bold="True" /><br />
@@ -62,7 +61,7 @@
                 </div>
                 <br>
                 <div class="col-md-4">
-                    <asp:Button runat="server" CssClass="submit" ID="messageButton" Text="הודעות וטיפים" />
+                    <asp:Button runat="server" CssClass="submit" ID="messageButton" Text="הודעות וטיפים" OnClick="messageButton_Click" />
                 </div>
                 <div class="col-md-4">
                     <asp:Button runat="server" CssClass="submit" ID="giftButton" Text="רשימת מתנות" OnClick="giftButton_Click" />

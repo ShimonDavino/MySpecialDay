@@ -10,6 +10,7 @@ namespace MSD
         private int eventId;
         private List<Gift> giftsList;
         private List<Invite> invitesList;
+        private string messages;
         private int amountOfConfirm;
         private string eventName;
 
@@ -18,8 +19,21 @@ namespace MSD
             this.eventId = eventId;
             giftsList = new List<Gift>();
             invitesList = new List<Invite>();
+            messages = "";
             amountOfConfirm = 0;
             eventName = name;
+            
+        }
+
+        public string Messages
+        {
+            get { return messages; }
+            set { messages = value; }
+        }
+
+        public void addMessage(string Content)
+        {
+            messages+="\n"+Content;
         }
 
         public void addGift(string name, int amount)
