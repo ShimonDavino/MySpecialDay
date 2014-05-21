@@ -42,7 +42,7 @@
          </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" ID="AddMessageButton" Text="הוספת הודעה" CssClass="btn btn-default" OnClick="AddDetailsButton_Click" />
+                <asp:Button runat="server" ID="AddDetailsButton" Text="הוספת הודעה" CssClass="btn btn-default" OnClick="AddDetailsButton_Click" />
                     </div>
 
 <br><br>

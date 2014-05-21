@@ -58,12 +58,12 @@ namespace MSD.eventFeatures {
         protected global::System.Web.UI.WebControls.TextBox ContentTextBox;
         
         /// <summary>
-        /// AddMessageButton control.
+        /// AddDetailsButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddMessageButton;
+        protected global::System.Web.UI.WebControls.Button AddDetailsButton;
     }
 }
