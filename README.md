@@ -1,6 +1,6 @@
 My Special Day
 ===============
-1
+
 <p><b>Repository for My Special Day Project</b></p>
 <p>
 <b>Project Info</b><br>
@@ -18,7 +18,7 @@ The main goal of "My Special Day" website is to help with all the small details 
 
 
 <b>Project link</b><br>
-[Classified !] (http://myspaialday.net84.net/index.html)
+[Classified !](my-specail-day.apphb.com/main)
 </p>
 
 <p>
