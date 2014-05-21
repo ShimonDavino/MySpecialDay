@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" >
     
-    <h2 dir="rtl">פרטים לגבי האירוע</h2>
+    <h2 dir="rtl">פרטי האירוע</h2>
     <div class="row" dir="rtl">
     <h3></h3>
   
