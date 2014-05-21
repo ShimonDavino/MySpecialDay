@@ -46,6 +46,29 @@ namespace MSD
             }
         }
 
+        protected void AddMessageButton_Click(object sender, EventArgs e)
+        {
+            if (FromTextBox.Text != "")
+            {
+                if (ContentTextBox.Text != "")
+                {
+                    string eventId = Request.QueryString["eventId"];
+                    ((Event)Application[eventId]).addMessage(FromTextBox.Text.ToString() + ": " + ContentTextBox.Text.ToString());
+                    MessagesTextBox.Text = ((Event)Application[eventId]).Messages;
+                    FromTextBox.Text = "";
+                    ContentTextBox.Text = "";
+                }
+                else
+                {
+                    msgLabel.Text = "השדה ריק";
+                }
+            }
+            else
+            {
+                msgLabel.Text = "השדה ריק";
+            }
+        }
+
 
 
       

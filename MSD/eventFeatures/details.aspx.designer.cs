@@ -31,13 +31,13 @@ namespace MSD.eventFeatures {
         protected global::System.Web.UI.WebControls.Label msgLabel;
         
         /// <summary>
-        /// MessagesTextBox control.
+        /// DetailsTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MessagesTextBox;
+        protected global::System.Web.UI.WebControls.TextBox DetailsTextBox;
         
         /// <summary>
         /// FromTextBox control.

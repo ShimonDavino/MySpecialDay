@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
 
-                <asp:TextBox ID="MessagesTextBox" runat="server" Height="200px" Width="600px" AutoPostBack="True" ReadOnly="True" TextMode="MultiLine" ></asp:TextBox>
+                <asp:TextBox ID="DetailsTextBox" runat="server" Height="200px" Width="600px" AutoPostBack="True" ReadOnly="True" TextMode="MultiLine" ></asp:TextBox>
         </div>
         <div class="form-group">
             

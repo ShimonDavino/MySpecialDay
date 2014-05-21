@@ -44,8 +44,8 @@ namespace MSD.eventFeatures
                 if (ContentTextBox.Text != "")
                 {
                     string eventId = Request.QueryString["eventId"];
-                    ((Event)Application[eventId]).addMessage(FromTextBox.Text.ToString() + ": " + ContentTextBox.Text.ToString());
-                    MessagesTextBox.Text = ((Event)Application[eventId]).Messages;
+                    ((Event)Application[eventId]).addDetail(FromTextBox.Text.ToString() + ": " + ContentTextBox.Text.ToString());
+                    DetailsTextBox.Text = ((Event)Application[eventId]).details;
                     FromTextBox.Text = "";
                     ContentTextBox.Text = "";
                 }
