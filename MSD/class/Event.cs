@@ -85,5 +85,14 @@ namespace MSD
             invitesList.Add(new Invite(name, amount));
             amountOfConfirm += amount;
         }
-	}
+
+        public string details { get; set; }
+
+        internal void addDetail(string Content)
+        {
+            details += Content + "\n";
+        }
+
+
+    }
 }
