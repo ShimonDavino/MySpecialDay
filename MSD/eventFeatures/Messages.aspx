@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
 
-                <asp:TextBox ID="MessagesTextBox" runat="server" Height="200px" Width="600px" AutoPostBack="True" ReadOnly="True" TextMode="MultiLine" dir="rtl"></asp:TextBox>
+                <asp:TextBox ID="MessagesTextBox" runat="server" Height="200px" Width="600px" AutoPostBack="True" ReadOnly="True" TextMode="MultiLine" ></asp:TextBox>
         </div>
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="FromTextBox" CssClass="col-md-2 control-label">מאת:</asp:Label>
