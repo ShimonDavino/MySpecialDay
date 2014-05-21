@@ -14,6 +14,7 @@ namespace MSD
         private string rides;
         private int amountOfConfirm;
         private string eventName;
+        private string details;
 
         public Event(int eventId,string name)
         {
@@ -22,6 +23,7 @@ namespace MSD
             invitesList = new List<Invite>();
             messages = "";
             rides = "";
+            details = "";
             amountOfConfirm = 0;
             eventName = name;
             
@@ -86,7 +88,11 @@ namespace MSD
             amountOfConfirm += amount;
         }
 
-        public string details { get; set; }
+        public string Details
+        {
+            get { return details; }
+            set { details = value; }
+        }
 
         internal void addDetail(string Content)
         {

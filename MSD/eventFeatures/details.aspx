@@ -55,6 +55,18 @@ Last name: <input type="text" name="LastName" value="Mouse"><br>
 <p>Click the "Submit" button and the form-data will be sent to a page on the server called "demo_form.asp".</p>--%>
 
         </div>
+
         </div>
+            <br />
+        </div>
+
+        <div dir="rtl">
+            <a ID="backProfilePageLink" runat="server">חזרה לדף האירוע</a>
+        </div>
+
+        </div>
+
+         
+
         </div>
 </asp:Content>
