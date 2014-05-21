@@ -74,7 +74,12 @@
                 <div class="col-md-4">
                     <asp:Button runat="server" CssClass="submit" ID="blessingButton" Text="העלאת ברכה מעוצבת" OnClick="blessingButton_Click" />
                 </div>
-                <br>
+                  <div class="col-md-4">
+                    <asp:Button runat="server" CssClass="submit" ID="detailsButton" Text="פרטים על האירוע" OnClick="detailsButton_Click" />
+                </div>
+                    
+                    <br>
+                 
             </div>
             <footer>
                 <p></p>
