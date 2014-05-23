@@ -16,10 +16,10 @@ namespace MSD.Account
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             DataBase db = new DataBase();
-            bool isFree = db.CheckIfUserIsFree(UserNameTextBox.Text, int.Parse(PasswordTextBox.Text));
+            bool isFree = db.CheckIfUserIsFree(UserNameTextBox.Text);
             if (!isFree)
             {
-                db.RegisterUser(UserNameTextBox.Text, int.Parse(PasswordTextBox.Text));
+                db.RegisterUser(UserNameTextBox.Text, PasswordTextBox.Text);
 
                 if (db.SuccessLogin)
                 {
@@ -36,7 +36,7 @@ namespace MSD.Account
                 RegisterError.Text = "שם המשתמש שבחרת כבר תפוס, בחר שם משתמש אחר !";
         }
 
-  
+
 
 
         //protected void CreateUser_Click(object sender, EventArgs e)
@@ -48,13 +48,13 @@ namespace MSD.Account
         //    {
         //        IdentityHelper.SignIn(manager, user, isPersistent: false);
         //        IdentityHelper.RedirectToReturnUrl(Request.QueryString["UserProfile.aspx"], Response);
-            
+
         //    }
         //    else 
         //    {
         //        ErrorMessage.Text = result.Errors.FirstOrDefault();
         //    }
         //}
-       
+
     }
 }

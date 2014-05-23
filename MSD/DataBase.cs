@@ -81,7 +81,7 @@ namespace MSD
             con.Open();
 
             string Query = "INSERT INTO [EventProfile] VALUES" +
-            "('" + UserId + "','" + EventId + "','" + EventType + "', N'" + EventOwnerName + "', N'" + PartnerName +
+            "('" + UserId + "','" + EventId + "',N'" + EventType + "', N'" + EventOwnerName + "', N'" + PartnerName +
              "', N'" + Family_1 + "', N'" + Family_2 + "','" + EventDate + "', N'" + EventPlace + "', N'" + EventAddress +
              "','" + PhoneOf_EventOwner + "', N'" + PersonalAddress + "','" + PhoneOf_EventPlace + "')";
             cmd = new SqlCommand(Query, con);
