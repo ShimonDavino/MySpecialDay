@@ -27,12 +27,12 @@ namespace MSD.Account
         {
             //msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
             DataBase db = new DataBase();
-            db.CheckUser(UserNameTextBox.Text, int.Parse(PasswordTextBox.Text));
+            db.CheckUser(UserNameTextBox.Text, PasswordTextBox.Text);
             string eventName = "?eventOf=shaul AND Avital Weeding";
             if (db.SuccessLogin)
             {
                 // עבור לדף הבא
-                Response.Redirect("EventProfile"+eventName);  //?eventOf=Shaul&Avital
+                Response.Redirect("EventProfile" + eventName);  //?eventOf=Shaul&Avital
             }
             else
             {
@@ -62,7 +62,7 @@ namespace MSD.Account
         //                    FailureText.Text = "wellcome.";
         //                    ErrorMessage.Visible = true;
         //                    RegisterHyperLink.NavigateUrl += "?ReturnUrl=EventProfile?user=" + UserName;
-                         
+
         //                }
         //            }
         //        if ( (UserName.Text.Equals(1112)))
@@ -78,19 +78,19 @@ namespace MSD.Account
         //            }
         //        }
         //    /*end addition for iter1*/    
-                    
+
         //            IdentityHelper.SignIn(manager, user, RememberMe.Checked);
         //            IdentityHelper.RedirectToReturnUrl(Request.QueryString["~/UserProfile.aspx"], Response);
         //        }
         //        else
         //        {
-                    
+
         //            FailureText.Text = "Invalid username or password.";
         //            ErrorMessage.Visible = true;
         //        }
         //    }
         //}
 
-        
+
     }
 }
