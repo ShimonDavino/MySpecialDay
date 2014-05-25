@@ -32,7 +32,7 @@ namespace MSD.Account
             if (db.SuccessLogin)
             {
                 // עבור לדף הבא
-                Response.Redirect("EventProfile" + eventName);  //?eventOf=Shaul&Avital
+                Response.Redirect("UserProfile" + eventName);  //?eventOf=Shaul&Avital
             }
             else
             {

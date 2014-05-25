@@ -182,6 +182,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="UserProfile.aspx" />
     <Content Include="USsimple\EventProfile111.aspx" />
     <Content Include="USsimple\main111.aspx" />
     <Content Include="WebForm1.aspx" />
@@ -385,6 +386,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="USsimple\EventProfile111.aspx.cs">
       <DependentUpon>EventProfile111.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

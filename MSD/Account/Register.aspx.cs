@@ -24,7 +24,7 @@ namespace MSD.Account
                 if (db.SuccessLogin)
                 {
                     // עבור לדף הבא
-                    Response.Redirect("~/EventRegistration");
+                    Response.Redirect("~/UserProfile");
                 }
                 else
                 {
