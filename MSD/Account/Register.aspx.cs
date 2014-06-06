@@ -19,17 +19,17 @@ namespace MSD.Account
             bool isFree = db.CheckIfUserIsFree(UserNameTextBox.Text);
             if (!isFree)
             {
-                db.RegisterUser(UserNameTextBox.Text, PasswordTextBox.Text);
+                int UserId = db.RegisterUser(UserNameTextBox.Text, PasswordTextBox.Text);
 
-                if (db.SuccessLogin)
+                if (UserId > 0)
                 {
                     // עבור לדף הבא
-                    Response.Redirect("~/UserProfile");
+                    Response.Redirect("~/EventRegistration"+"?userId="+UserId);
                 }
                 else
                 {
                     // הודעת שגיאה
-                    RegisterError.Text = "אחד מהפרטים שגוי";
+                    RegisterError.Text = "רישום משתמש נכשל !";
                 }
             }
             else

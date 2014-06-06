@@ -42,7 +42,7 @@ namespace MSD
         }
 
 
-        public void RegisterUser(string UserName, string Password)
+        public int RegisterUser(string UserName, string Password)
         {
 
             con.Open();
@@ -51,13 +51,15 @@ namespace MSD
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@UserName", SqlDbType.NChar).Value = UserName;
             cmd.Parameters.Add("@UserPassword", SqlDbType.NChar).Value = Password;
-            int affectedRows = cmd.ExecuteNonQuery();
+            //int affectedRows = cmd.ExecuteNonQuery();
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            int userId = dr.GetInt32(0);
             con.Close();
-
-            if (affectedRows > 0)
-                SuccessLogin = true;
+            if (userId>0)
+                return userId;
             else
-                SuccessLogin = false;
+                return 0;
         }
 
         public bool CheckIfUserIsFree(string UserName)
@@ -76,15 +78,21 @@ namespace MSD
         }
         public bool RegisterUserToNewEvent(int UserId, int EventId, string EventType, string EventOwnerName, string PartnerName,
                                           string Family_1, string Family_2, string EventDate, string EventPlace, string EventAddress,
-                                          string PhoneOf_EventOwner, string PersonalAddress, string PhoneOf_EventPlace)
+                                          string PhoneOf_EventOwner, string PhoneOf_EventPlace)
         {
             con.Open();
 
-            string Query = "INSERT INTO [EventProfile] VALUES" +
-            "('" + UserId + "','" + EventId + "',N'" + EventType + "', N'" + EventOwnerName + "', N'" + PartnerName +
-             "', N'" + Family_1 + "', N'" + Family_2 + "','" + EventDate + "', N'" + EventPlace + "', N'" + EventAddress +
-             "','" + PhoneOf_EventOwner + "', N'" + PersonalAddress + "','" + PhoneOf_EventPlace + "')";
+            string Query = "DECLARE @datetime date "+
+                            "set @datetime="+"'"+ EventDate+"'"+
+                " INSERT INTO [EventProfile]"+
+                "(UserId,EventId,EventType,EventOwnerName,PartnerName,Family_1,Family_2,EventDate,EventPlace,EventAddress,PhoneOf_EventOwner,PhoneOf_EventPlace) "
+                +"VALUES " +
+            "('" + UserId + "','" + EventId + "','" + EventType + "', N'" + EventOwnerName + "', N'" + PartnerName +
+             "', N'" + Family_1 + "', N'" + Family_2 + "'," + "@datetime" + ", N'" + EventPlace + "', N'" + EventAddress +
+             "','" + PhoneOf_EventOwner + "','" + PhoneOf_EventPlace + "')";
             cmd = new SqlCommand(Query, con);
+            
+            //cmd.Parameters.Add("@datetime", SqlDbType.Date  ).Value = EventDate;
             //cmd = new SqlCommand("RegisterUserToEvent", con);
             //cmd.CommandType = CommandType.StoredProcedure;
             //cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = UserId;
@@ -111,6 +119,52 @@ namespace MSD
 
 
         }
+
+        public bool ifUserRegistered(string UserName)
+        {
+
+            con.Open();
+            string Query = "SELECT  u.UserId from UserEvents u" +
+                           "WHERE u.UserName="+"'"+UserName+"'"+
+                           "AND EXISTS (SELECT e.UserId FROM EventProfile e" +
+                           "where u.UserId= e.UserId)";
+            cmd = new SqlCommand(Query, con);
+            cmd.CommandType = CommandType.Text;
+            //cmd.Parameters.Add("@UserName", SqlDbType.NChar).Value = UserName;
+            dr = cmd.ExecuteReader();
+            bool hasRows = dr.HasRows;
+            con.Close();
+            if (hasRows)
+                return true;
+            else
+                return false;
+        }
+
+        public List<int> LastEvents(string EventType,int NumOfEvents)
+        {
+            List<int> eventsList = new List<int>();
+            int i = 0;
+            con.Open();
+            string Query = "DECLARE @dayNow date"+
+                           "set @dayNow = GETDATE()"+
+                           "select top"+"'"+NumOfEvents+"'"+ "EventId from EventProfile"+
+                           "WHERE EventDate  = @dayNow"+
+                           "AND EventType ="+"'"+EventType+"'"+
+                           "ORDER BY EventDate DESC";
+            cmd = new SqlCommand(Query, con);
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+            while(dr.Read())
+            {
+                eventsList.Add(dr.GetInt32(i));
+                i++;
+            }
+            con.Close();
+            return eventsList;
+
+        }
+
+
     }
 }
 

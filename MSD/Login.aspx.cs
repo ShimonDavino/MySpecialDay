@@ -28,11 +28,13 @@ namespace MSD.Account
             //msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
             DataBase db = new DataBase();
             db.CheckUser(UserNameTextBox.Text, PasswordTextBox.Text);
-            string eventName = "?eventOf=shaul AND Avital Weeding";
+            string eventName = "?eventOf=";//db.getNameEventOf()
             if (db.SuccessLogin)
             {
-                // עבור לדף הבא
-                Response.Redirect("UserProfile" + eventName);  //?eventOf=Shaul&Avital
+                if (db.ifUserRegistered(UserNameTextBox.Text))
+                    Response.Redirect("UserProfile" + eventName);
+                else
+                    Response.Redirect("EventRegistration");
             }
             else
             {

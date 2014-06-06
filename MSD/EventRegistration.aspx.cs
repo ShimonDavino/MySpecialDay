@@ -1,36 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace MSD
 {
     public partial class EventRegistration : System.Web.UI.Page
     {
+        //public string EventType_db { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void RegiaterUserToEvent_Click(object sender, EventArgs e)
         {
-            int UserId = 0; // userId from table after register page
-            int eventId = 6666;
-            //DateTime EventDateConvert = DateTime.Parse(EventDateTextBox.Text);
-            //string formatted = EventDateConvert.ToString("MM-dd-yyyy");
-            //DateTime date = DateTime.Parse(formatted);
-            //DateTime EventDateConvert = DateTime.ParseExact(EventDateTextBox.Text, "MM/dd/yyyy", null);
-            //DateTime dt = DateTime.Parse(EventDateTextBox.Text, CultureInfo.GetCultureInfo("en-gb"));
-            //DateTime dt = GetDate(EventDateTextBox.Text);
+            string userId = Request.QueryString["UserId"]; // userId from table after register page
+            int UserId = int.Parse(userId.ToString());
+            Random random = new Random();
+            int randEventId = random.Next(0, 5000);
+            //CultureInfo obj = new CultureInfo("en-CA");
+            DateTime dt1 = DateTime.Parse(datepicker.Text); 
+            string datepickerParsed = dt1.ToString("MM-dd-yyyy");
+            //DateTime dt2 = Convert.ToDateTime(date);
+            //dt = DateTime.Parse(datepicker.Text);
+            
+            
             DataBase db = new DataBase();
-            db.RegisterUserToNewEvent(UserId, eventId, EventTypeDropDownList.SelectedValue,
+            db.RegisterUserToNewEvent(UserId, randEventId, EventTypeDropDownList.SelectedItem.Value,
                 EventOwnerNameTextBox.Text, PartnerNameTextBox.Text, Family_1EventOwnerTextBox.Text,
-                FamilyPartnerNameTextBox.Text, EventDateTextBox.Text, EventPlaceTextBox.Text, EventAddressTextBox.Text,
-                PhoneOf_EventOwnerTextBox.Text, "חשמונאים", PhoneOf_EventPlaceTextBox.Text);
+                FamilyPartnerNameTextBox.Text, datepickerParsed, EventPlaceTextBox.Text, EventAddressTextBox.Text,
+                PhoneOf_EventOwnerTextBox.Text, PhoneOf_EventPlaceTextBox.Text);
         }
+
+       
 
         //private DateTime GetDate(string dateToConvert)
         //{
@@ -51,6 +59,8 @@ namespace MSD
         //{
         //    //EventDateCalendar.Visible = true;
         //}
+
+        public DataRow objRow { get; set; }
     }
 
 }
