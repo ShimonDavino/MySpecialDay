@@ -4,8 +4,10 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+<%-- <---------------- start of the headline --%>
 <head runat="server">
-    <title>יצירת אירוע</title>
+    <title>יצירת משתמש</title>
         <!-- Jquery is requierd-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
@@ -62,19 +64,20 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse ">
       
   <ul class="nav navbar-nav navbar-right  "  id="menu_items">
-   <li class="active navbar-right"><a href="#">דף הבית</a></li>
-  <li class="navbar-right"><a href="#">מי אנחנו</a></li>
-  <li class="navbar-right"> <a href="ProductsForm.aspx">מוצרים</a></li>
-   <li class="navbar-right"><a href="#">צרו קשר</a></li>
+   <li class="active navbar-right"><a href="../main.aspx">My Special Day</a></li>
+  <li class="navbar-right"><a href="../About.aspx">מי אנחנו</a></li>
+
+ <%-- <li class="navbar-right"> <a href="ProductsForm.aspx">מוצרים</a></li>--%>
+   <li class="navbar-right"><a href="../Contact.aspx">צרו קשר</a></li>
   <li  class="navbar-right">
   
-  <a href="#" class="dropdown-toggle " data-toggle="dropdown">עזרה <b class="caret"></b></a>
+  <%--<a href="#" class="dropdown-toggle " data-toggle="dropdown">עזרה <b class="caret"></b></a>
    <ul class="dropdown-menu ">
    <li ><a href="#">בלוג</a></li>
    <li ><a href="#">פורום</a></li>
   <li ><a href="#">שאלות ותשובות</a></li>
   <li ><a href="#">גירסה 1.0.1</a></li>
-   </ul>
+   </ul>--%>
             
    </li>
    </ul>
@@ -87,11 +90,13 @@
        
       
   </nav> <!-- End of Nav Bar    ------------------------>
-        
+<%-- <---------------- end of the headline --%>
+
+
    <%--<section id="prodacts" class="row">
        <div class="col-sm-5">--%>
        <br /><br />
-         <p class="text_3D" dir="rtl"> יצירת אירוע </p> <br /> <br />  
+         <p class="text_3D" dir="rtl"> יצירת משתמש </p> <br /> <br />  
           <table>
               <tr>
                   <td><asp:Label runat="server" AssociatedControlID="UserNameTextBox">שם משתמש</asp:Label></td>
