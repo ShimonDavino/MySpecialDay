@@ -154,6 +154,7 @@
     <Content Include="eventFeatures\RsvpList.aspx" />
     <Content Include="eventFeatures\Rsvp.aspx" />
     <Content Include="eventFeatures\video.aspx" />
+    <Content Include="eventProfile__2.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
@@ -292,6 +293,13 @@
     </Compile>
     <Compile Include="eventFeatures\video.aspx.designer.cs">
       <DependentUpon>video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eventProfile__2.aspx.cs">
+      <DependentUpon>eventProfile__2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eventProfile__2.aspx.designer.cs">
+      <DependentUpon>eventProfile__2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -42,7 +42,7 @@
        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
         <span class="sr-only">Toggle navigation</span>
     </button>
-   <a class="navbar-brand" href="#">לוגו הארגון</a>
+   <%--<a class="navbar-brand" href="#">לוגו הארגון</a>--%>
    </div>                    
  </nav>
         
@@ -56,7 +56,7 @@
    <span class="icon-bar"></span>
     <span class="icon-bar"></span>--%>
    </button>
-       <img src="../Content/images/MY SPECIAL DAY logo small.jpg" alt="logo" height="50" width="50" />
+       <%--<img src="" alt="logo" height="50" width="50" />--%>
   </div>
           
           
@@ -82,9 +82,9 @@
    </li>
    </ul>
      
-      <button type="button" class="btn btn-default navbar-btn  btn-inverse  navbar-left  btn-xs" id="registerButton" >רישום</button>
+      <%--<button type="button" class="btn btn-default navbar-btn  btn-inverse  navbar-left  btn-xs" id="registerButton" >רישום</button>--%>
       
-      <button type="button" class="btn btn-default navbar-btn  navbar-left btn-xs btn-primary"  >כניסה</button>
+      <button type="button" class="btn btn-default navbar-btn  navbar-left btn-xs btn-primary"><a href="../Login.aspx">כניסה</a></button>
    
   </div><!-- /.navbar-collapse -->
        

@@ -8,24 +8,18 @@ using System.Web;
 using System.Web.UI;
 using MSD.Models;
 
-namespace MSD.Account
+namespace MSD
 {
     public partial class Login : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            RegisterHyperLink.NavigateUrl = "Register";
-
-            var returnUrl = HttpUtility.UrlEncode(Request.QueryString["~/UserProfile.aspx"]);
-            if (!String.IsNullOrEmpty(returnUrl))
-            {
-                RegisterHyperLink.NavigateUrl += "?ReturnUrl=EventProfile.aspx" + returnUrl;
-            }
+           
         }
 
-        protected void LogIn(object sender, EventArgs e)
+        protected void LogInUserButton_Click(object sender, EventArgs e)
         {
-            //msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
+            msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
             DataBase db = new DataBase();
             db.CheckUser(UserNameTextBox.Text, PasswordTextBox.Text);
             string eventName = "?eventOf=";//db.getNameEventOf()
@@ -42,6 +36,27 @@ namespace MSD.Account
                 //msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
             }
         }
+
+
+        //protected void LogInUser_Click(object sender, EventArgs e)
+        //{
+        //    //msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
+        //    DataBase db = new DataBase();
+        //    db.CheckUser(UserNameTextBox.Text, PasswordTextBox.Text);
+        //    string eventName = "?eventOf=";//db.getNameEventOf()
+        //    if (db.SuccessLogin)
+        //    {
+        //        if (db.ifUserRegistered(UserNameTextBox.Text))
+        //            Response.Redirect("UserProfile" + eventName);
+        //        else
+        //            Response.Redirect("EventRegistration");
+        //    }
+        //    else
+        //    {
+        //        // הודעת שגיאה
+        //        //msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
+        //    }
+        //}
 
 
 
