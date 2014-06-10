@@ -24,7 +24,7 @@ namespace MSD.Account
                 if (UserId > 0)
                 {
                     // עבור לדף הבא
-                    Response.Redirect("~/EventRegistration"+"?userId="+UserId);
+                    Response.Redirect("~/UserProfile"+"?userId="+UserId);
                 }
                 else
                 {
