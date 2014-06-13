@@ -66,12 +66,26 @@ body{
 	text-align:center;
 	color:#CCC;
 }
-				
+
+
+#ImgLink
+{
+    margin:auto;
+	opacity:0.7;
+	transition:opacity 0.5s  ;
+    -webkit-transition:opacity 0.5s ;
+}	
+
+#ImgLink:hover{
+	opacity:1;
+	cursor:pointer;
+}
+	
 #prodacts div img{
 	margin:auto;
 	opacity:0.7;
 	transition:opacity 0.5s  ;
-    -webkit-transition:opacity 0.5s ;  Safari 
+    -webkit-transition:opacity 0.5s ;   
 }
 				
 #prodacts div img:hover{

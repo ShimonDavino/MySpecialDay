@@ -1,10 +1,7 @@
-﻿<%@ Page Title="EventProfile" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EventProfile.aspx.cs" Inherits="MSD.EventProfile" EnableEventValidation="false" %>
-
-<%--sdfsdf --%>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="EventProfile" Language="C#"  AutoEventWireup="true" CodeBehind="EventProfile.aspx.cs" Inherits="MSD.EventProfile" EnableEventValidation="false" %>
 
 
-    2<style type="text/css">
+    <%--<style type="text/css">
         .selectDefualtOp {
             display: none;
             width: 200px;
@@ -26,7 +23,8 @@
         .auto-style2 {
             width: 28px;
         }
-    </style><div dir="rtl" class="row">
+    </style>--%>
+        <div dir="rtl" class="row">
 
         <%--<h1 > 555 </h1><br />--%>
         <asp:Label ID="EventOfNames" runat="server" Font-Size="Large" Font-Bold="True" /><br />

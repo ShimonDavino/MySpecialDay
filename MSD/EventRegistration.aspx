@@ -96,8 +96,6 @@
    <section id="prodacts"  class="row">
        <br /><br />
        <div class="col-sm-4" >
-
-        <%--<h1 dir="rtl"> יצירת אירוע </h1><br />--%>
          <p class="text_3D" dir="rtl"> יצירת אירוע </p> <br />   
          <table  border="0">
             <tr>

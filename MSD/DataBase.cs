@@ -6,6 +6,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Configuration;
+using System.Collections;
+using System.Web.UI.WebControls;
 
 namespace MSD
 {
@@ -16,7 +18,7 @@ namespace MSD
         SqlDataReader dr;
         //public string UserName { get; set; }
         //public int Password { get; set; }
-
+        List<string> Names;
 
         public bool SuccessLogin { get; private set; }
 
@@ -90,25 +92,10 @@ namespace MSD
             "('" + UserId + "','" + EventId + "','" + EventType + "', N'" + EventOwnerName + "', N'" + PartnerName +
              "', N'" + Family_1 + "', N'" + Family_2 + "'," + "@datetime" + ", N'" + EventPlace + "', N'" + EventAddress +
              "','" + PhoneOf_EventOwner + "','" + PhoneOf_EventPlace + "')";
+            cmd.CommandType = CommandType.Text;
             cmd = new SqlCommand(Query, con);
             
-            //cmd.Parameters.Add("@datetime", SqlDbType.Date  ).Value = EventDate;
-            //cmd = new SqlCommand("RegisterUserToEvent", con);
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = UserId;
-            //cmd.Parameters.Add("@EventId", SqlDbType.Int).Value = EventId;
-            //cmd.Parameters.Add("@EventType", SqlDbType.NChar).Value = EventType;
-            //cmd.Parameters.Add("@EventOwnerName", SqlDbType.NVarChar).Value = @"N"+ EventOwnerName;  //'N'+EventOwnerName;
-            //cmd.Parameters.Add("@PartnerName", SqlDbType.NVarChar).Value = PartnerName;
-            //cmd.Parameters.Add("@Family_1", SqlDbType.NVarChar).Value = Family_1;
-            //cmd.Parameters.Add("@Family_2", SqlDbType.NVarChar).Value = Family_2;
-            //cmd.Parameters.Add("@PhoneOf_EventOwner", SqlDbType.NChar).Value = PhoneOf_EventOwner;
-            //cmd.Parameters.Add("@PersonalAddress", SqlDbType.NVarChar).Value = PersonalAddress;
-            //cmd.Parameters.Add("@EventDate", SqlDbType.Date).Value = EventDate;
-            //cmd.Parameters.Add("@EventPlace", SqlDbType.NVarChar).Value = EventPlace;
-            //cmd.Parameters.Add("@EventAddress", SqlDbType.NVarChar).Value =EventAddress;
-            //cmd.Parameters.Add("@PhoneOf_EventPlace", SqlDbType.NChar).Value = PhoneOf_EventPlace;
-
+          
             int affectedRows = cmd.ExecuteNonQuery();
             con.Close();
 
@@ -116,8 +103,6 @@ namespace MSD
                 return true;
             else
                 return false;
-
-
         }
 
         public bool ifUserRegistered(string UserName)
@@ -125,9 +110,9 @@ namespace MSD
 
             con.Open();
             string Query = "SELECT  u.UserId from UserEvents u" +
-                           "WHERE u.UserName="+"'"+UserName+"'"+
-                           "AND EXISTS (SELECT e.UserId FROM EventProfile e" +
-                           "where u.UserId= e.UserId)";
+                           " WHERE u.UserName="+"'"+UserName+"'"+
+                           " AND EXISTS (SELECT e.UserId FROM EventProfile e" +
+                           " where u.UserId= e.UserId)";
             cmd = new SqlCommand(Query, con);
             cmd.CommandType = CommandType.Text;
             //cmd.Parameters.Add("@UserName", SqlDbType.NChar).Value = UserName;
@@ -151,8 +136,9 @@ namespace MSD
                            "WHERE EventDate  = @dayNow"+
                            "AND EventType ="+"'"+EventType+"'"+
                            "ORDER BY EventDate DESC";
-            cmd = new SqlCommand(Query, con);
             cmd.CommandType = CommandType.Text;
+            cmd = new SqlCommand(Query, con);
+            
             dr = cmd.ExecuteReader();
             while(dr.Read())
             {
@@ -165,6 +151,116 @@ namespace MSD
         }
 
 
+
+        public bool InsertInviteToTable(int EventId,string PrivateName,string PartnerName,
+                                        string Family,int HowMatchComming)
+        {
+            con.Open();
+
+            string Query = "INSERT INTO InvitesList(EventId,InviteName,partnerName,Family,How_match_comming)" +
+                            " VALUES('"+ EventId+"',N'"+PrivateName+"',N'"+PartnerName+
+                            "',N'"+Family+"','"+HowMatchComming+"')";
+            cmd = new SqlCommand(Query, con);
+            cmd.CommandType = CommandType.Text;
+   
+            int affectedRows = cmd.ExecuteNonQuery();
+            con.Close();
+
+            if (affectedRows > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public string  GetEventOwnerName(int EventId)
+        {
+            con.Open();
+            string Query = "SELECT EventOwnerName+' & '+PartnerName from EventProfile"+
+                            " WHERE EventId = '"+EventId+"'";
+            cmd = new SqlCommand(Query, con);
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            string UserName = dr.GetString(0).ToString();
+            con.Close();
+            return UserName;
+        }
+
+        internal bool IsOwnerEvent(int UserId)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public List<string>  GetAllInvites()  //System.Web.UI.WebControls.ListItem[]
+        {
+            Names = new List<string>();
+            
+            con.Open();
+            cmd = new SqlCommand("SELECT InviteName,partnerName,Family,How_match_comming from InvitesList", con);
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string fullName = ParsFullName(dr.GetString(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3));
+                Names.Add(fullName);
+            }
+            con.Close();
+            return Names;
+        }
+
+        private string ParsFullName(string Nname, string Pname, string Fname,int count)
+        {
+            if (Pname != "")
+                return Nname + " ו" + Pname + " " + Fname + "  -  " + count;
+            else
+                return Nname + " " + Fname + "  -  " + count;
+        }
+
+        public List<string> findInvites(string latter)
+        {
+            Names = new List<string>();
+            con.Open();
+            cmd = new SqlCommand("SELECT InviteName,partnerName,Family,How_match_comming from InvitesList"+
+                                 " WHERE Family LIKE @letter+'%' OR InviteName LIKE @letter+'%'", con);
+
+            cmd.Parameters.Add("@letter", SqlDbType.NVarChar).Value = latter;
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                string fullName = ParsFullName(dr.GetString(0), dr.GetString(1), dr.GetString(2), dr.GetInt32(3));
+                Names.Add(fullName);
+            }
+            con.Close();
+            return Names;
+        }
+
+        public string GetPeopleCount()
+        {
+            int count=0;
+            con.Open();
+            cmd = new SqlCommand("SELECT sum(How_match_comming) from InvitesList", con);
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+                count = dr.GetInt32(0);
+            con.Close();
+            return count.ToString();
+        }
+
+        public string GetFamilyCount()
+        {
+            int count = 0;
+            con.Open();
+            cmd = new SqlCommand("SELECT COUNT(Family) from InvitesList", con);
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+                count = dr.GetInt32(0);
+            con.Close();
+            return count.ToString();
+        }
     }
 }
 

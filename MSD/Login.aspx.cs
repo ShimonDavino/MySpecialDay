@@ -33,7 +33,7 @@ namespace MSD
             else
             {
                 // הודעת שגיאה
-                //msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
+                msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
             }
         }
 

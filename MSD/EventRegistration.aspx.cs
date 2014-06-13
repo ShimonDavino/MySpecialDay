@@ -36,6 +36,7 @@ namespace MSD
                 EventOwnerNameTextBox.Text, PartnerNameTextBox.Text, Family_1EventOwnerTextBox.Text,
                 FamilyPartnerNameTextBox.Text, datepickerParsed, EventPlaceTextBox.Text, EventAddressTextBox.Text,
                 PhoneOf_EventOwnerTextBox.Text, PhoneOf_EventPlaceTextBox.Text);
+            Response.Redirect("EventProfile?EventId=" + randEventId);
         }
 
        
@@ -50,17 +51,7 @@ namespace MSD
         //    return dt.Date;
         //}
 
-        //protected void EventDateCalendar_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    //EventDateTextBox.Text = EventDateCalendar.SelectedDate.ToShortDateString();
-        //}
-
-        //protected void CalendarImageButton_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    //EventDateCalendar.Visible = true;
-        //}
-
-        public DataRow objRow { get; set; }
+      
     }
 
 }
