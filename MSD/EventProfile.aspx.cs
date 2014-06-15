@@ -24,20 +24,20 @@ namespace MSD
                 MessagesTextBox.Text = tmpEvent.Messages;
                 RidesTextBox.Text = tmpEvent.Rides;
 
-                if (checkAuthentication())
-                {
-                    enterLink.Visible = false;
-                    exitButton.Visible = true;
-                    registerLink.Text = "ברוך הבא " + Session["user"].ToString();
-                    registerLink.NavigateUrl = "UserProfile?userId=" + Session["userId"].ToString();
-                }
-                else
-                {
-                    enterLink.Visible = true;
-                    exitButton.Visible = false;
-                    registerLink.Text = "רישום";
-                    registerLink.NavigateUrl = "~/Login";
-                }
+                //if (checkAuthentication())
+                //{
+                //    enterLink.Visible = false;
+                //    exitButton.Visible = true;
+                //    registerLink.Text = "ברוך הבא " + Session["user"].ToString();
+                //    registerLink.NavigateUrl = "UserProfile?userId=" + Session["userId"].ToString();
+                //}
+                //else
+                //{
+                //    enterLink.Visible = true;
+                //    exitButton.Visible = false;
+                //    registerLink.Text = "רישום";
+                //    registerLink.NavigateUrl = "~/Login";
+                //}
             }
 
         }

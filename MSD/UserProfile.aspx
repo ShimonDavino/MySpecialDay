@@ -2,12 +2,13 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
 <%--    <h3>hello <%:  GetUserName()  %></h3> <%--get.username()--%>
-
+<div>
     <asp:Label ID="get_UsernameLable" runat="server"></asp:Label>
-    this is your User Profile</p>
+    <p>this is your User Profile</p>
     <li><a runat="server" href="~/EventRegistration" title="Event Registration">יצירת אירוע חדש</a></li>
     
     <p>.</p>
+    </div>
 </asp:Content>
 
 

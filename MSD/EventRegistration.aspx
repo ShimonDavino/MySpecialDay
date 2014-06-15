@@ -21,8 +21,6 @@
                                     <asp:ListItem Value="Brita">בריתה</asp:ListItem>
                                     <asp:ListItem Value="other">אחר</asp:ListItem>
                                 </asp:DropDownList>
-
-
                             </td>
                         </tr>
                         <tr>

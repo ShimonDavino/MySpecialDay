@@ -23,20 +23,20 @@ namespace MSD
                 string fullName = db.GetEventOwnerName(EventId);
                 EventOwnerNameLable.Text = fullName;
 
-                if (checkAuthentication())
-                {
-                    enterLink.Visible = false;
-                    exitButton.Visible = true;
-                    registerLink.Text = "ברוך הבא " + Session["user"].ToString();
-                    registerLink.NavigateUrl = "UserProfile?userId=" + Session["userId"].ToString();
-                }
-                else
-                {
-                    enterLink.Visible = true;
-                    exitButton.Visible = false;
-                    registerLink.Text = "רישום";
-                    registerLink.NavigateUrl = "~/Login";
-                }
+                //if (checkAuthentication())
+                //{
+                //    enterLink.Visible = false;
+                //    exitButton.Visible = true;
+                //    registerLink.Text = "ברוך הבא " + Session["user"].ToString();
+                //    registerLink.NavigateUrl = "UserProfile?userId=" + Session["userId"].ToString();
+                //}
+                //else
+                //{
+                //    enterLink.Visible = true;
+                //    exitButton.Visible = false;
+                //    registerLink.Text = "רישום";
+                //    registerLink.NavigateUrl = "~/Login";
+                //}
             }
         }
 
@@ -66,15 +66,6 @@ namespace MSD
                     Response.Redirect("eventProfile_shaul?EventId="+EventId);
             }
         }
-
-        protected void exitButton_Click(object sender, EventArgs e)
-        {
-            Session[Session["user"].ToString()] = null;
-            Session["user"] = null;
-            Session["userId"] = null;
-            Response.Redirect(Request.RawUrl);
-        }
-
 
 
         protected bool checkAuthentication()
