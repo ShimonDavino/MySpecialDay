@@ -17,6 +17,7 @@ namespace MSD
         {
             if (!IsPostBack)
             {
+                EventDateCalendar.SelectedDate = DateTime.Now;
                 if (checkAuthentication())
                 {
                     RegiaterUserToEvent.Enabled = true;
@@ -29,13 +30,13 @@ namespace MSD
             }
         }
 
-        protected void exitButton_Click(object sender, EventArgs e)
-        {
-            Session[Session["user"].ToString()] = null;
-            Session["user"] = null;
-            Session["userId"] = null;
-            Response.Redirect(Request.RawUrl);
-        }
+        //protected void exitButton_Click(object sender, EventArgs e)
+        //{
+        //    Session[Session["user"].ToString()] = null;
+        //    Session["user"] = null;
+        //    Session["userId"] = null;
+        //    Response.Redirect(Request.RawUrl);
+        //}
 
 
 
@@ -62,7 +63,7 @@ namespace MSD
 
             } while (Application[randEventId.ToString()] != null);
             //CultureInfo obj = new CultureInfo("en-CA");
-            DateTime dt1 = DateTime.Parse(datepicker.Text);
+            DateTime dt1 = DateTime.Parse(EventDateCalendar.SelectedDate.ToShortDateString());
             string datepickerParsed = dt1.ToString("MM-dd-yyyy");
             //DateTime dt2 = Convert.ToDateTime(date);
             //dt = DateTime.Parse(datepicker.Text);

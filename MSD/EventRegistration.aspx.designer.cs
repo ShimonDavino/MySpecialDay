@@ -13,42 +13,6 @@ namespace MSD {
     public partial class EventRegistration {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// exitButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button exitButton;
-        
-        /// <summary>
-        /// registerLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink registerLink;
-        
-        /// <summary>
-        /// enterLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink enterLink;
-        
-        /// <summary>
         /// EventTypeDropDownList control.
         /// </summary>
         /// <remarks>
@@ -103,13 +67,13 @@ namespace MSD {
         protected global::System.Web.UI.WebControls.TextBox PhoneOf_EventOwnerTextBox;
         
         /// <summary>
-        /// datepicker control.
+        /// EventDateCalendar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox datepicker;
+        protected global::System.Web.UI.WebControls.Calendar EventDateCalendar;
         
         /// <summary>
         /// EventPlaceTextBox control.
