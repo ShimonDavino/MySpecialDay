@@ -15,11 +15,29 @@ namespace MSD
         int EventId = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            db = new DataBase();
-            string eventId = Request.QueryString["EventId"]; // userId from table after register page
-            int EventId = int.Parse(eventId.ToString());
-            string fullName = db.GetEventOwnerName(EventId);
-            EventOwnerNameLable.Text = fullName;
+            if (!IsPostBack)
+            {
+                db = new DataBase();
+                string eventId = Request.QueryString["EventId"]; // userId from table after register page
+                int EventId = int.Parse(eventId.ToString());
+                string fullName = db.GetEventOwnerName(EventId);
+                EventOwnerNameLable.Text = fullName;
+
+                if (checkAuthentication())
+                {
+                    enterLink.Visible = false;
+                    exitButton.Visible = true;
+                    registerLink.Text = "ברוך הבא " + Session["user"].ToString();
+                    registerLink.NavigateUrl = "UserProfile?userId=" + Session["userId"].ToString();
+                }
+                else
+                {
+                    enterLink.Visible = true;
+                    exitButton.Visible = false;
+                    registerLink.Text = "רישום";
+                    registerLink.NavigateUrl = "~/Login";
+                }
+            }
         }
 
         protected void ConfirmArrivalButton_Click(object sender, EventArgs e)
@@ -49,11 +67,31 @@ namespace MSD
             }
         }
 
+        protected void exitButton_Click(object sender, EventArgs e)
+        {
+            Session[Session["user"].ToString()] = null;
+            Session["user"] = null;
+            Session["userId"] = null;
+            Response.Redirect(Request.RawUrl);
+        }
+
+
+
+        protected bool checkAuthentication()
+        {
+            if (Session["user"] != null)
+                if (Session[Session["user"].ToString()] != null)
+                    if (Session[Session["user"].ToString()].ToString() == "TRUE")
+                        return true;
+            return false;
+        }
+		
+
         protected void ViewInvitesButton_Click(object sender, EventArgs e)
         {
             ViewInvitesListBox.Focus();
             List<string> AllInvites;
-            int UserId=0;
+            //int UserId=0;
             db = new DataBase();
             if(true) //db.IsOwnerEvent(UserId)
             {

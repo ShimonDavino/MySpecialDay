@@ -160,7 +160,7 @@
     <Content Include="eventFeatures\RsvpList.aspx" />
     <Content Include="eventFeatures\Rsvp.aspx" />
     <Content Include="eventFeatures\video.aspx" />
-    <Content Include="eventProfile_shaul.aspx" />
+    <Content Include="eventProfile.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
@@ -180,7 +180,7 @@
     <Content Include="Content\images\wedding_bridge_groom.jpg" />
     <Content Include="Content\images\wedding_gazebo_by_the_sea_204277.jpg" />
     <Content Include="Content\Site.css" />
-    <Content Include="EventProfile.aspx" />
+    <Content Include="EventProfile_old.aspx" />
     <Content Include="EventRegistration.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="EventRegistration.css" />
@@ -242,6 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="class\Event.cs" />
+    <Compile Include="class\EventLisiOfUser.cs" />
     <Compile Include="class\Gift.cs" />
     <Compile Include="class\Invite.cs" />
     <Compile Include="ConfirmArrival.aspx.cs">
@@ -307,12 +308,12 @@
     <Compile Include="eventFeatures\video.aspx.designer.cs">
       <DependentUpon>video.aspx</DependentUpon>
     </Compile>
-    <Compile Include="eventProfile_shaul.aspx.cs">
-      <DependentUpon>eventProfile_shaul.aspx</DependentUpon>
+    <Compile Include="eventProfile.aspx.cs">
+      <DependentUpon>eventProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eventProfile_shaul.aspx.designer.cs">
-      <DependentUpon>eventProfile_shaul.aspx</DependentUpon>
+    <Compile Include="eventProfile.aspx.designer.cs">
+      <DependentUpon>eventProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -374,12 +375,12 @@
     <Compile Include="main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EventProfile.aspx.cs">
-      <DependentUpon>EventProfile.aspx</DependentUpon>
+    <Compile Include="EventProfile_old.aspx.cs">
+      <DependentUpon>EventProfile_old.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EventProfile.aspx.designer.cs">
-      <DependentUpon>EventProfile.aspx</DependentUpon>
+    <Compile Include="EventProfile_old.aspx.designer.cs">
+      <DependentUpon>EventProfile_old.aspx</DependentUpon>
     </Compile>
     <Compile Include="EventRegistration.aspx.cs">
       <DependentUpon>EventRegistration.aspx</DependentUpon>

@@ -51,6 +51,29 @@ namespace MSD
         {
             if (!IsPostBack)
             {
+                if (checkAuthentication())
+                {
+                    /*
+                    registerLink.he
+                    registrationLink.Visible = false;
+                    enterLink.Visible = false;
+                    exitButton.Visible = true;
+                    LogInLabel.Visible = true;
+                    LogInLabel.Text = "ברוך הבא " + Session["user"].ToString();
+                    */
+                    enterLink.Visible = false;
+                    exitButton.Visible = true;
+                    registerLink.Text = "ברוך הבא " + Session["user"].ToString();
+                    registerLink.NavigateUrl = "UserProfile?userId=" + Session["userId"].ToString();
+
+                }
+                else
+                {
+                    enterLink.Visible = true;
+                    exitButton.Visible = false;
+                    registerLink.Text = "רישום";
+                    registerLink.NavigateUrl = "~/Login";
+                }
                 // Set Anti-XSRF token
                 ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
                 ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
@@ -70,6 +93,25 @@ namespace MSD
         //{
 
         //}
+
+        protected void exitButton_Click(object sender, EventArgs e)
+        {
+            Session[Session["user"].ToString()] = null;
+            Session["user"] = null;
+            Session["userId"] = null;
+            Response.Redirect(Request.RawUrl); 
+        }
+
+        
+
+        protected bool checkAuthentication()
+        {
+            if (Session["user"] != null)
+                if (Session[Session["user"].ToString()] != null)
+                    if (Session[Session["user"].ToString()].ToString() == "TRUE")
+                        return true;
+            return false;
+        }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {

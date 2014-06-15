@@ -10,78 +10,87 @@
 namespace MSD {
     
     
-    public partial class eventProfile_shaul {
+    public partial class EventProfile {
         
         /// <summary>
-        /// form1 control.
+        /// EventOfNames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label EventOfNames;
         
         /// <summary>
-        /// exitButton control.
+        /// lblEventUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button exitButton;
+        protected global::System.Web.UI.WebControls.Label lblEventUser;
         
         /// <summary>
-        /// registerLink control.
+        /// shuttlesButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink registerLink;
+        protected global::System.Web.UI.WebControls.Button shuttlesButton;
         
         /// <summary>
-        /// enterLink control.
+        /// rsvpButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink enterLink;
+        protected global::System.Web.UI.WebControls.Button rsvpButton;
         
         /// <summary>
-        /// EventOwnerNameLable control.
+        /// messageButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label EventOwnerNameLable;
+        protected global::System.Web.UI.WebControls.Button messageButton;
         
         /// <summary>
-        /// ImgLink control.
+        /// giftButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImgLink;
+        protected global::System.Web.UI.WebControls.Button giftButton;
         
         /// <summary>
-        /// MessagesTextBox control.
+        /// videoButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MessagesTextBox;
+        protected global::System.Web.UI.WebControls.Button videoButton;
         
         /// <summary>
-        /// RidesTextBox control.
+        /// blessingButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RidesTextBox;
+        protected global::System.Web.UI.WebControls.Button blessingButton;
+        
+        /// <summary>
+        /// detailsButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button detailsButton;
     }
 }

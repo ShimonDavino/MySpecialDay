@@ -65,24 +65,13 @@
                     </button>
                     <a class="navbar-brand" runat="server" href="~/main">My Special Day</a>
                     </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                         <%-- <ul class="nav navbar-nav navbar-right"> --%>  
-                            <ul class="nav navbar-nav"> 
-                                <li><a runat="server" href="~/Account/Register">רישום</a></li>
-                                <li><a runat="server" href="Login.aspx">כניסה</a></li>  <%--~/Login--%>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav"> 
-                                <li><a runat="server" href="~/UserProfile.aspx" title="Manage your account">שלום, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                                <li>
-                                    
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/main" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                  
+                    <ul class="nav navbar-nav"> 
+                        <li><asp:Button class="btn btn-default navbar-btn  btn-inverse  navbar-left  btn-xs" ID="exitButton" runat="server" Visible="false" Text="יציאה" OnClick ="exitButton_Click"/></li>
+                        <li><asp:HyperLink ID="registerLink" runat="server" NavigateUrl="~/Account/Register">רישום</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="enterLink" runat="server" NavigateUrl="~/Login">כניסה</asp:HyperLink>></li>  <%--~/Login--%>
+                    </ul>
+
                 </div>
             </div>
         </div> <%-- navbar navbar-inverse navbar-fixed-top --%>

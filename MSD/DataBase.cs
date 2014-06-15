@@ -92,7 +92,7 @@ namespace MSD
             "('" + UserId + "','" + EventId + "','" + EventType + "', N'" + EventOwnerName + "', N'" + PartnerName +
              "', N'" + Family_1 + "', N'" + Family_2 + "'," + "@datetime" + ", N'" + EventPlace + "', N'" + EventAddress +
              "','" + PhoneOf_EventOwner + "','" + PhoneOf_EventPlace + "')";
-            cmd.CommandType = CommandType.Text;
+            //cmd.CommandType = CommandType.Text;
             cmd = new SqlCommand(Query, con);
             
           
@@ -170,6 +170,20 @@ namespace MSD
                 return true;
             else
                 return false;
+        }
+
+        public int GetUserIdFromUserName(string UserName)
+        {
+            con.Open();
+            string Query = "SELECT UserId from UserEvents" +
+                            " WHERE UserName = '" + UserName + "'";
+            cmd = new SqlCommand(Query, con);
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            int UserId = dr.GetInt32(0);
+            con.Close();
+            return UserId;
         }
 
         public string  GetEventOwnerName(int EventId)

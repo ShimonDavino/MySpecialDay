@@ -14,21 +14,39 @@ namespace MSD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (!IsPostBack)
+            {
+                if (checkAuthentication())
+                {
+
+                }
+            }
         }
 
         protected void LogInUserButton_Click(object sender, EventArgs e)
         {
+            
             msgLabel.Text = "שם משתמש או סיסמא אינם נכונים";
             DataBase db = new DataBase();
             db.CheckUser(UserNameTextBox.Text, PasswordTextBox.Text);
-            string eventName = "?eventOf=";//db.getNameEventOf()
+            int userId;
             if (db.SuccessLogin)
             {
-                if (db.ifUserRegistered(UserNameTextBox.Text))
+                /*if (db.ifUserRegistered(UserNameTextBox.Text))
                     Response.Redirect("UserProfile" + eventName);
                 else
                     Response.Redirect("EventRegistration");
+                 */
+                userId = db.GetUserIdFromUserName(UserNameTextBox.Text);
+                if (Application[UserNameTextBox.Text] == null)
+                {
+                    EventLisiOfUser newUser = new EventLisiOfUser(UserNameTextBox.Text);
+                    Application[UserNameTextBox.Text] = newUser;
+                }
+                Session[UserNameTextBox.Text] = "TRUE";
+                Session["user"] = UserNameTextBox.Text;
+                Session["userId"] = userId;
+                Response.Redirect("UserProfile?userId=" + userId);
             }
             else
             {
@@ -37,6 +55,24 @@ namespace MSD
             }
         }
 
+        protected void exitButton_Click(object sender, EventArgs e)
+        {
+            Session[Session["user"].ToString()] = null;
+            Session["user"] = null;
+            Session["userId"] = null;
+            Response.Redirect(Request.RawUrl);
+        }
+
+
+
+        protected bool checkAuthentication()
+        {
+            if (Session["user"] != null)
+                if (Session[Session["user"].ToString()] != null)
+                    if (Session[Session["user"].ToString()].ToString() == "TRUE")
+                        return true;
+            return false;
+        }
 
         //protected void LogInUser_Click(object sender, EventArgs e)
         //{

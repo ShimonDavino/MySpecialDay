@@ -82,8 +82,12 @@
    </li>
       
    </ul>
-       
-      <button type="button" class="btn btn-default navbar-btn  btn-inverse  navbar-left  btn-xs" id="registerButton"><a href="Account/Register.aspx">רישום</a></button>
+   <ul class="nav navbar-nav"> 
+        <li><asp:Button class="btn btn-default navbar-btn  btn-inverse  navbar-left  btn-xs" ID="exitButton" runat="server" Visible="false" Text="יציאה" OnClick ="exitButton_Click"/></li>
+        <li><asp:HyperLink ID="registerLink" runat="server" NavigateUrl="~/Account/Register">רישום</asp:HyperLink></li>
+        <li><asp:HyperLink ID="enterLink" runat="server" NavigateUrl="~/Login">כניסה</asp:HyperLink></li>  <%--~/Login--%>
+    </ul> 
+      <%--<button type="button" class="btn btn-default navbar-btn  btn-inverse  navbar-left  btn-xs" id="registerButton"><a href="Account/Register.aspx">רישום</a></button>--%>
       
 <%--      <button type="button" class="btn btn-default navbar-btn  navbar-left btn-xs btn-primary"  >כניסה</button>--%>
    
@@ -119,7 +123,7 @@
              
                <tr>
             <td>
-                 <asp:Button runat="server" ID="CreateUserButton" OnClick="LogInUserButton_Click"  Text="רישום" CssClass="buttonCss" />
+                 <asp:Button runat="server" ID="CreateUserButton" OnClick="LogInUserButton_Click"  Text="כניסה" CssClass="buttonCss" />
          </td>
             </tr>
         <tr>

@@ -7,145 +7,66 @@ using System.Web.UI.WebControls;
 
 namespace MSD
 {
-    public partial class EventProfile : System.Web.UI.Page
+    public partial class eventProfile_shaul : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*string EventUserString;
-            EventUserString = Request.QueryString["eventOf"];
-            EventOfNames.Text = EventUserString;
-             */
-          
-            if (!IsPostBack) //טעינת דף חדש
-            {
-                string eventId = Request.QueryString["eventId"]; //לקיחת ערך הפרמטר user משורת הכתובת
-                if (eventId != null)
-                {
-                    if (Application[eventId] == null)
-                    {
-                        rsvpButton.Enabled = false;
-                        shuttlesButton.Enabled = false;
-                        giftButton.Enabled = false;
-                        messageButton.Enabled = false;
-                   //     videoButton.Enabled = false;
-                   //     blessingButton.Enabled = false;
-                        EventOfNames.Text = "שגיאה בטעינת הדף אירוע לא קיים";
-                    }
-                    else
-                    {
-                        EventOfNames.Text = "האירוע של " + ((Event)Application[eventId]).EventString;
-                        // בדיקה אם היוזר קיים ושינוי הכותרת קטע זמני עד שיהיה לנו את מסד הנתוני ואז נטען פרטים משם
-                    }
 
+            if (!IsPostBack)
+            {
+                DataBase db = new DataBase();
+                string eventId = Request.QueryString["EventId"]; // userId from table after register page
+                int EventId = int.Parse(eventId.ToString());
+                string fullName = db.GetEventOwnerName(EventId);
+                EventOwnerNameLable.Text = fullName;
+                Event tmpEvent = ((Event)Application[eventId]);
+                MessagesTextBox.Text = tmpEvent.Messages;
+                RidesTextBox.Text = tmpEvent.Rides;
+
+                if (checkAuthentication())
+                {
+                    enterLink.Visible = false;
+                    exitButton.Visible = true;
+                    registerLink.Text = "ברוך הבא " + Session["user"].ToString();
+                    registerLink.NavigateUrl = "UserProfile?userId=" + Session["userId"].ToString();
                 }
                 else
                 {
-                    rsvpButton.Enabled = false;
-                    shuttlesButton.Enabled = false;
-                    giftButton.Enabled = false;
-                    messageButton.Enabled = false;
-                  //  videoButton.Enabled = false;
-                  //  blessingButton.Enabled = false;
-                    EventOfNames.Text = "שגיאה בטעינת הדף אירוע לא קיים";
+                    enterLink.Visible = true;
+                    exitButton.Visible = false;
+                    registerLink.Text = "רישום";
+                    registerLink.NavigateUrl = "~/Login";
                 }
             }
-            else
-            {
 
-            }
-        } // Page_Load
-
-        protected void rsvpButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string eventId = Request.QueryString["eventId"];
-                Page.Response.Redirect("~/eventFeatures/Rsvp.aspx?eventId=" + eventId);
-            }
-            catch (Exception ex)
-            {
-                Exception E = ex;
-            }
-        } // rsvpButton_Click
-
-        protected void giftButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string eventId = Request.QueryString["eventId"];
-                Page.Response.Redirect("~/eventFeatures/GiftList.aspx?eventId=" + eventId);
-            }
-            catch (Exception ex)
-            {
-                Exception E = ex;
-            }
-        } // giftButton_Click
-
-        protected void blessingButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string eventId = Request.QueryString["eventId"];
-                Page.Response.Redirect("~/eventFeatures/blessing.aspx?eventId=" + eventId);
-            }
-            catch (Exception ex)
-            {
-                Exception E = ex;
-            }
-        } // giftButton_Click
-
-        protected void videoButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string eventId = Request.QueryString["eventId"];
-                Page.Response.Redirect("~/eventFeatures/video.aspx?eventId=" + eventId);
-            }
-            catch (Exception ex)
-            {
-                Exception E = ex;
-            }
         }
 
-        protected void messageButton_Click(object sender, EventArgs e)
+        protected void confirmArrivalImageButton_Click(object sender, ImageClickEventArgs e)
         {
-            try
-            {
-                string eventId = Request.QueryString["eventId"];
-                Page.Response.Redirect("~/eventFeatures/Messages.aspx?eventId=" + eventId);
-            }
-            catch (Exception ex)
-            {
-                Exception E = ex;
-            }
+            string eventId = Request.QueryString["EventId"]; // userId from table after register page
+            int EventId = int.Parse(eventId.ToString());
+            Response.Redirect("ConfirmArrival?EventId=" + EventId);
+
         }
 
-        protected void shuttlesButton_Click(object sender, EventArgs e)
+        protected void exitButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string eventId = Request.QueryString["eventId"];
-                Page.Response.Redirect("~/eventFeatures/Rides.aspx?eventId=" + eventId);
-            }
-            catch (Exception ex)
-            {
-                Exception E = ex;
-            }
+            Session[Session["user"].ToString()] = null;
+            Session["user"] = null;
+            Session["userId"] = null;
+            Response.Redirect(Request.RawUrl);
         }
 
 
-        protected void detailsButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string eventId = Request.QueryString["eventId"];
-                Page.Response.Redirect("~/eventFeatures/details.aspx?eventId=" + eventId);
-            }
-            catch (Exception ex)
-            {
-                Exception E = ex;
-            }
-        } 
 
+        protected bool checkAuthentication()
+        {
+            if (Session["user"] != null)
+                if (Session[Session["user"].ToString()] != null)
+                    if (Session[Session["user"].ToString()].ToString() == "TRUE")
+                        return true;
+            return false;
+        }
     }
 }
