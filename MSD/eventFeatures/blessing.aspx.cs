@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+using System.Data;
 
 namespace MSD
 {
@@ -59,29 +61,89 @@ namespace MSD
         //    }
         //} //ConfirmButton_Click
 
+        //protected void Button1_Click(object sender, EventArgs e) // old
+        //{
+        //    if ((fileuploadExcel.PostedFile != null) && (fileuploadExcel.PostedFile.ContentLength > 0))
+        //    {
+        //        string fn = System.IO.Path.GetFileName(fileuploadExcel.PostedFile.FileName);
+        //        string SaveLocation = Server.MapPath("Data") + "\\" + fn;
+        //        try
+        //        {
+        //            fileuploadExcel.PostedFile.SaveAs(SaveLocation);
+        //            Response.Write("The file has been uploaded.");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Response.Write("Error: " + ex.Message);
+        //            //Note: Exception.Message returns detailed message that describes the current exception.
+        //            //For security reasons, we do not recommend you return Exception.Message to end users in
+        //            //production environments. It would be better just to put a generic error message.
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Response.Write("Please select a file to upload.");
+        //    }
+        //}//Button1_Click
+
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if ((fileuploadExcel.PostedFile != null) && (fileuploadExcel.PostedFile.ContentLength > 0))
+
+            if (FileUpload1.HasFile)
             {
-                string fn = System.IO.Path.GetFileName(fileuploadExcel.PostedFile.FileName);
-                string SaveLocation = Server.MapPath("Data") + "\\" + fn;
-                try
-                {
-                    fileuploadExcel.PostedFile.SaveAs(SaveLocation);
-                    Response.Write("The file has been uploaded.");
-                }
-                catch (Exception ex)
-                {
-                    Response.Write("Error: " + ex.Message);
-                    //Note: Exception.Message returns detailed message that describes the current exception.
-                    //For security reasons, we do not recommend you return Exception.Message to end users in
-                    //production environments. It would be better just to put a generic error message.
-                }
+
+                FileUpload1.PostedFile.SaveAs(Server.MapPath("~/eventFeatures/Data/Blessing/") + FileUpload1.FileName);
             }
-            else
+
+            DataTable dt = new DataTable(); // build the grid
+            dt.Columns.Add("File", typeof(String));
+            dt.Columns.Add("Size", typeof(String));
+            dt.Columns.Add("Type", typeof(String));
+
+
+            foreach (string strFile in Directory.GetFiles(Server.MapPath("~/eventFeatures/Data/Blessing/")))
             {
-                Response.Write("Please select a file to upload.");
+                FileInfo fi = new FileInfo(strFile);
+
+                dt.Rows.Add(fi.Name, fi.Length, getFileTypeByExtention(fi.Extension));
+
             }
-        } //Button1_Click
+
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+        }
+
+        private string getFileTypeByExtention (string extention)
+        {
+            switch (extention.ToLower())
+            {
+
+                case ".doc":
+                case ".docx":
+                    return "Microsoft Word Document";
+
+                case ".jpg":
+                case ".jpeg":
+                    return "JPEG Image";
+                case ".png":
+                    return "PNG Image";
+                case ".gif":
+                    return "GIF Image";
+                case ".pdf":
+                    return "PDF Portable Document Format";
+
+
+                default:
+                    return "unkown Image";
+
+
+
+            }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+
+        } 
     }
 }
