@@ -13,6 +13,24 @@ namespace MSD {
     public partial class EventRegistration {
         
         /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// welcomeUserLable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label welcomeUserLable;
+        
+        /// <summary>
         /// EventTypeDropDownList control.
         /// </summary>
         /// <remarks>
@@ -67,13 +85,13 @@ namespace MSD {
         protected global::System.Web.UI.WebControls.TextBox PhoneOf_EventOwnerTextBox;
         
         /// <summary>
-        /// EventDateCalendar control.
+        /// datepicker control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar EventDateCalendar;
+        protected global::System.Web.UI.WebControls.TextBox datepicker;
         
         /// <summary>
         /// EventPlaceTextBox control.

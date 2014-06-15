@@ -15,19 +15,19 @@ namespace MSD
         //public string EventType_db { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                EventDateCalendar.SelectedDate = DateTime.Now;
-                if (checkAuthentication())
-                {
-                    RegiaterUserToEvent.Enabled = true;
+            //if (!IsPostBack)
+            //{
+            //    EventDateCalendar.SelectedDate = DateTime.Now;
+            //    if (checkAuthentication())
+            //    {
+            //        RegiaterUserToEvent.Enabled = true;
 
-                }
-                else 
-                {
-                    RegiaterUserToEvent.Enabled = false;
-                }
-            }
+            //    }
+            //    else 
+            //    {
+            //        RegiaterUserToEvent.Enabled = false;
+            //    }
+            //}
         }
 
         //protected void exitButton_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace MSD
 
             } while (Application[randEventId.ToString()] != null);
             //CultureInfo obj = new CultureInfo("en-CA");
-            DateTime dt1 = DateTime.Parse(EventDateCalendar.SelectedDate.ToShortDateString());
+            DateTime dt1 = DateTime.Parse(datepicker.Text);
             string datepickerParsed = dt1.ToString("MM-dd-yyyy");
             //DateTime dt2 = Convert.ToDateTime(date);
             //dt = DateTime.Parse(datepicker.Text);
