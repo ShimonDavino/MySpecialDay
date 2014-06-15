@@ -72,7 +72,7 @@ namespace MSD
                     enterLink.Visible = true;
                     exitButton.Visible = false;
                     registerLink.Text = "רישום";
-                    registerLink.NavigateUrl = "~/Login";
+                    registerLink.NavigateUrl = "~/Account/Register";
                 }
                 // Set Anti-XSRF token
                 ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
@@ -99,10 +99,10 @@ namespace MSD
             Session[Session["user"].ToString()] = null;
             Session["user"] = null;
             Session["userId"] = null;
-            Response.Redirect(Request.RawUrl); 
+            Response.Redirect(Request.RawUrl);
         }
 
-        
+
 
         protected bool checkAuthentication()
         {
