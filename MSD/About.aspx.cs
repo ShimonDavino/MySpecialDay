@@ -11,7 +11,14 @@ namespace MSD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Calendar1.SelectedDate = DateTime.Now;
         }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            Label1.Text = Calendar1.SelectedDate.ToShortDateString();
+        }
+
+        
     }
 }
