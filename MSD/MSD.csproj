@@ -448,7 +448,8 @@
     <Folder Include="App_Browsers\" />
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
-    <Folder Include="eventFeatures\Data\" />
+    <Folder Include="eventFeatures\Data\Blessing\" />
+    <Folder Include="eventFeatures\Data\video\" />
     <Folder Include="USsimple\Account\" />
   </ItemGroup>
   <PropertyGroup>
