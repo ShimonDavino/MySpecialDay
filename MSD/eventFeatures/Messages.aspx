@@ -10,12 +10,10 @@
             <section id="GiftForm">
                 <div class="form-horizontal">
                     <asp:Label ID="msgLabel" runat="server" CssClass="errMsg" ForeColor="#FF3300"></asp:Label>
-                    
                 </div>
             </section>
         </div>
         <div class="form-group">
-
                 <asp:TextBox ID="MessagesTextBox" runat="server" Height="200px" Width="600px" AutoPostBack="True" ReadOnly="True" TextMode="MultiLine" ></asp:TextBox>
         </div>
         <div class="form-group">
@@ -39,7 +37,6 @@
             </div>
             <br />
         </div>
-
         <div>
             <a ID="backProfilePageLink" runat="server">חזרה לדף האירוע</a>
         </div>

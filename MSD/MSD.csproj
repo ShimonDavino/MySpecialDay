@@ -157,6 +157,7 @@
     <Content Include="eventFeatures\Rides.aspx" />
     <Content Include="eventFeatures\Messages.aspx" />
     <Content Include="eventFeatures\GiftList.aspx" />
+    <Content Include="RSVP2.aspx" />
     <Content Include="eventFeatures\RsvpList.aspx" />
     <Content Include="eventFeatures\Rsvp.aspx" />
     <Content Include="eventFeatures\video.aspx" />
@@ -286,6 +287,13 @@
     </Compile>
     <Compile Include="eventFeatures\GiftList.aspx.designer.cs">
       <DependentUpon>GiftList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RSVP2.aspx.cs">
+      <DependentUpon>RSVP2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RSVP2.aspx.designer.cs">
+      <DependentUpon>RSVP2.aspx</DependentUpon>
     </Compile>
     <Compile Include="eventFeatures\RsvpList.aspx.cs">
       <DependentUpon>RsvpList.aspx</DependentUpon>

@@ -5,9 +5,9 @@
     <h2 dir="rtl">אישור הגעה</h2>
     <h2 dir="rtl"><asp:Literal ID="eventNameLiteral" runat="server" ></asp:Literal></h2>
     <hr />
-    <div dir="rtl" class="row
-        <div class="col-md-8
-            <section id="loginForm
+    <div dir="rtl" class="row>
+        <div class="col-md-8>
+            <section id="loginForm>
                 <div class="form-horizontal" >
                     <h4> </h4>
                     

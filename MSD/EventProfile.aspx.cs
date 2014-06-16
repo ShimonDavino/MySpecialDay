@@ -15,15 +15,25 @@ namespace MSD
 
             if (!IsPostBack)
             {
-                DataBase db = new DataBase();
-                string eventId = Request.QueryString["EventId"]; // userId from table after register page
-                int EventId = int.Parse(eventId.ToString());
-                string fullName = db.GetEventOwnerName(EventId);
-                EventOwnerNameLable.Text = fullName;
-                Event tmpEvent = ((Event)Application[eventId]);
-                MessagesTextBox.Text = tmpEvent.Messages;
-                RidesTextBox.Text = tmpEvent.Rides;
+                string eventId = Request.QueryString["EventId"];
+                if (eventId != null)
+                {
+                    if (eventId != "11111")
+                    {
+                        DataBase db = new DataBase();
 
+                        int EventId = int.Parse(eventId.ToString());
+                        string fullName = db.GetEventOwnerName(EventId);
+                        EventOwnerNameLable.Text = fullName;
+                    }
+                    else
+                    {
+                        EventOwnerNameLable.Text = "אירוע לדוגמה";
+                    }
+                    Event tmpEvent = ((Event)Application[eventId]);
+                    MessagesTextBox.Text = tmpEvent.Messages;
+                    RidesTextBox.Text = tmpEvent.Rides;
+                }
                 //if (checkAuthentication())
                 //{
                 //    enterLink.Visible = false;
@@ -67,6 +77,29 @@ namespace MSD
                     if (Session[Session["user"].ToString()].ToString() == "TRUE")
                         return true;
             return false;
+        }
+
+        protected void AddMessageButton_Click(object sender, EventArgs e)
+        {
+            if (FromTextBox.Text != "")
+            {
+                if (ContentTextBox.Text != "")
+                {
+                    string eventId = Request.QueryString["EventId"];
+                    ((Event)Application[eventId]).addMessage(FromTextBox.Text.ToString() + ": " + ContentTextBox.Text.ToString());
+                    MessagesTextBox.Text = ((Event)Application[eventId]).Messages;
+                    FromTextBox.Text = "";
+                    ContentTextBox.Text = "";
+                }
+                else
+                {
+                    msgLabel.Text = "השדה ריק";
+                }
+            }
+            else
+            {
+                msgLabel.Text = "השדה ריק";
+            }
         }
     }
 }
