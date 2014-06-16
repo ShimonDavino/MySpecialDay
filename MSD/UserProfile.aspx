@@ -4,7 +4,8 @@
 <%--    <h3>hello <%:  GetUserName()  %></h3> <%--get.username()--%>
 <div>
     <asp:Label ID="get_UsernameLable" runat="server"></asp:Label>
-    <p>this is your User Profile</p>
+    
+    <p>this is your User Profile </p> 
     <li><a runat="server" href="~/EventRegistration" title="Event Registration">יצירת אירוע חדש</a></li>
     
     <p>.</p>

@@ -15,19 +15,19 @@ namespace MSD
         //public string EventType_db { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    EventDateCalendar.SelectedDate = DateTime.Now;
-            //    if (checkAuthentication())
-            //    {
-            //        RegiaterUserToEvent.Enabled = true;
+            if (!IsPostBack)
+            {
+                EventDateCalendar.SelectedDate = DateTime.Now;
+                if (checkAuthentication())
+                {
+                    RegiaterUserToEvent.Enabled = true;
 
-            //    }
-            //    else 
-            //    {
-            //        RegiaterUserToEvent.Enabled = false;
-            //    }
-            //}
+                }
+                else 
+                {
+                    RegiaterUserToEvent.Enabled = false;
+                }
+            }
         }
 
         //protected void exitButton_Click(object sender, EventArgs e)
@@ -52,7 +52,9 @@ namespace MSD
         protected void RegiaterUserToEvent_Click(object sender, EventArgs e)
         {
 
-            
+            msgLabel.Text = "מספר הטלפון שהוכנס אינו תקין";
+            //msgLabel1.Text = "מספר הטלפון שלך אינו תקין";
+            //msgLabel2.Text = "טלפון של האולם אינו תקין.";
             string userId = Session["userId"].ToString(); // userId from table after register page
             int UserId = int.Parse(userId.ToString());
             Random random = new Random();
@@ -63,20 +65,30 @@ namespace MSD
 
             } while (Application[randEventId.ToString()] != null);
             //CultureInfo obj = new CultureInfo("en-CA");
-            DateTime dt1 = DateTime.Parse(datepicker.Text);
+            DateTime dt1 = DateTime.Parse(EventDateCalendar.SelectedDate.ToShortDateString());
             string datepickerParsed = dt1.ToString("MM-dd-yyyy");
             //DateTime dt2 = Convert.ToDateTime(date);
             //dt = DateTime.Parse(datepicker.Text);
 
 
             DataBase db = new DataBase();
-            db.RegisterUserToNewEvent(UserId, randEventId, EventTypeDropDownList.SelectedItem.Value,
-                EventOwnerNameTextBox.Text, PartnerNameTextBox.Text, Family_1EventOwnerTextBox.Text,
-                FamilyPartnerNameTextBox.Text, datepickerParsed, EventPlaceTextBox.Text, EventAddressTextBox.Text,
-                PhoneOf_EventOwnerTextBox.Text, PhoneOf_EventPlaceTextBox.Text);
-            Event newEvent = new Event(randEventId, EventTypeDropDownList.SelectedItem.Value);
-            Application[randEventId.ToString()] = newEvent;
-            Response.Redirect("EventProfile?EventId=" + randEventId);
+            if ((PhoneOf_EventOwnerTextBox.Text.Length > 10) || (PhoneOf_EventPlaceTextBox.Text.Length > 10 )) // ולידציה של מספר טלפון
+                {
+                    //הודעת שגיאה
+                    msgLabel.Text = "אחד או יותר ממספרי הטלפון שהוכנסו אינם תקינים";
+                }
+            else 
+            {
+                db.RegisterUserToNewEvent(UserId, randEventId, EventTypeDropDownList.SelectedItem.Value,
+              EventOwnerNameTextBox.Text, PartnerNameTextBox.Text, Family_1EventOwnerTextBox.Text,
+              FamilyPartnerNameTextBox.Text, datepickerParsed, EventPlaceTextBox.Text, EventAddressTextBox.Text,
+              PhoneOf_EventOwnerTextBox.Text, PhoneOf_EventPlaceTextBox.Text);
+                Event newEvent = new Event(randEventId, EventTypeDropDownList.SelectedItem.Value);
+                Application[randEventId.ToString()] = newEvent;
+                Response.Redirect("EventProfile?EventId=" + randEventId);
+            }
+
+          
 
         }
 
