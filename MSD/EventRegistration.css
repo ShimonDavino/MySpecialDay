@@ -21,7 +21,7 @@
 
 .carousel-indicators
 {
-    background-color:lightblue;
+    /*background-color:lightgray; the background of the spots under the pic*/ 
 }
 body{ 
 	direction:rtl;
