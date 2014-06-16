@@ -11,34 +11,56 @@ namespace MSD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) //טעינת דף חדש
+            if (!IsPostBack)
             {
-                Event eventId = Request.QueryString["event"]; //לקיחת ערך הפרמטר user משורת הכתובת
+                string eventId = Request.QueryString["eventId"];
                 if (eventId != null)
                 {
-                    // בדיקה אם היוזר קיים ושינוי הכותרת קטע זמני עד שיהיה לנו את מסד הנתוני ואז נטען פרטים משם
-                    if (user.Equals("1111"))
+                    if (Application[eventId] == null)
                     {
-                        lblEventUser.Text = "ברוך הבא לדף האירוע של שלומי ושלומית";
-                        //אפשרות לשנות את התמונה בהתאם לאירוע הקיים
-                        //imgEvent.ImageUrl = "כתובת התמונה";
+                        AmountTextBox.Enabled = false;
+                        ConfirmNameTextBox.Enabled = false;
+                        ConfirmButton.Enabled = false;
+                        msgLabel.Text = "שגיאה בטעינת הדף אירוע לא קיים";
                     }
-                    else if (user.Equals("1112"))
-                    {
-                        lblEventUser.Text = "ברוך הבא לדף האירוע של איציק";
-                        //imgEvent.ImageUrl = "כתובת התמונה";  
-                   }
+                    else
+                        eventNameLiteral.Text = "לאירוע של "+((Event)Application[eventId]).EventString;
+                }
+                else
+                {
+                    AmountTextBox.Enabled = false;
+                    ConfirmNameTextBox.Enabled = false;
+                    ConfirmButton.Enabled = false;
+                    msgLabel.Text = "שגיאה בטעינת הדף אירוע לא קיים";
+
                 }
             }
             else
             {
 
             }
-        }
+        } // Page_Load
 
-        protected void ButtonConfirm_Click(object sender, EventArgs e)
+        protected void ConfirmButton_Click(object sender, EventArgs e)
         {
+            if (ConfirmNameTextBox.Text != "")
+            {
+                int amount;
+                if(Int32.TryParse(AmountTextBox.Text.ToString(),out amount)){
+                    string eventId =Request.QueryString["eventId"];
+                    ((Event)Application[eventId]).AddInvite(ConfirmNameTextBox.Text.ToString(), amount);
+                    Page.Response.Redirect("~/EventProfile.aspx?eventId="+ eventId);
+                }
+                else
+                {
+                    msgLabel.Text = "השדה כמות אנשים חייב להיות מספר";
+                }
+            }
+            else
+            {
+                msgLabel.Text = "השדה שם מאשר ריק";
+            }
+        } // ConfirmButton_Click
 
-        }
     }
 }

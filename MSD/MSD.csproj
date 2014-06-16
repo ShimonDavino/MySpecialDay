@@ -152,15 +152,15 @@
     <Content Include="Content\images\mi-ba_2.jpg" />
     <Content Include="Content\images\mi-ba_3.jpg" />
     <Content Include="Content\images\mi-ba_4.jpg" />
-    <Content Include="eventFeatures\blessing.aspx" />
-    <Content Include="eventFeatures\details.aspx" />
-    <Content Include="eventFeatures\Rides.aspx" />
-    <Content Include="eventFeatures\Messages.aspx" />
-    <Content Include="eventFeatures\GiftList.aspx" />
+    <Content Include="blessing.aspx" />
+    <Content Include="details.aspx" />
+    <Content Include="Rides.aspx" />
+    <Content Include="Messages.aspx" />
+    <Content Include="GiftList.aspx" />
     <Content Include="RSVP2.aspx" />
-    <Content Include="eventFeatures\RsvpList.aspx" />
-    <Content Include="eventFeatures\Rsvp.aspx" />
-    <Content Include="eventFeatures\video.aspx" />
+    <Content Include="RsvpList.aspx" />
+    <Content Include="Rsvp.aspx" />
+    <Content Include="video.aspx" />
     <Content Include="eventProfile.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Account\Manage.aspx" />
@@ -253,39 +253,39 @@
     <Compile Include="ConfirmArrival.aspx.designer.cs">
       <DependentUpon>ConfirmArrival.aspx</DependentUpon>
     </Compile>
-    <Compile Include="eventFeatures\blessing.aspx.cs">
+    <Compile Include="blessing.aspx.cs">
       <DependentUpon>blessing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eventFeatures\blessing.aspx.designer.cs">
+    <Compile Include="blessing.aspx.designer.cs">
       <DependentUpon>blessing.aspx</DependentUpon>
     </Compile>
-    <Compile Include="eventFeatures\details.aspx.cs">
+    <Compile Include="details.aspx.cs">
       <DependentUpon>details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eventFeatures\details.aspx.designer.cs">
+    <Compile Include="details.aspx.designer.cs">
       <DependentUpon>details.aspx</DependentUpon>
     </Compile>
-    <Compile Include="eventFeatures\Rides.aspx.cs">
+    <Compile Include="Rides.aspx.cs">
       <DependentUpon>Rides.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eventFeatures\Rides.aspx.designer.cs">
+    <Compile Include="Rides.aspx.designer.cs">
       <DependentUpon>Rides.aspx</DependentUpon>
     </Compile>
-    <Compile Include="eventFeatures\Messages.aspx.cs">
+    <Compile Include="Messages.aspx.cs">
       <DependentUpon>Messages.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eventFeatures\Messages.aspx.designer.cs">
+    <Compile Include="Messages.aspx.designer.cs">
       <DependentUpon>Messages.aspx</DependentUpon>
     </Compile>
-    <Compile Include="eventFeatures\GiftList.aspx.cs">
+    <Compile Include="GiftList.aspx.cs">
       <DependentUpon>GiftList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eventFeatures\GiftList.aspx.designer.cs">
+    <Compile Include="GiftList.aspx.designer.cs">
       <DependentUpon>GiftList.aspx</DependentUpon>
     </Compile>
     <Compile Include="RSVP2.aspx.cs">
@@ -295,25 +295,25 @@
     <Compile Include="RSVP2.aspx.designer.cs">
       <DependentUpon>RSVP2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="eventFeatures\RsvpList.aspx.cs">
+    <Compile Include="RsvpList.aspx.cs">
       <DependentUpon>RsvpList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eventFeatures\RsvpList.aspx.designer.cs">
+    <Compile Include="RsvpList.aspx.designer.cs">
       <DependentUpon>RsvpList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="eventFeatures\Rsvp.aspx.cs">
+    <Compile Include="Rsvp.aspx.cs">
       <DependentUpon>Rsvp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eventFeatures\Rsvp.aspx.designer.cs">
+    <Compile Include="Rsvp.aspx.designer.cs">
       <DependentUpon>Rsvp.aspx</DependentUpon>
     </Compile>
-    <Compile Include="eventFeatures\video.aspx.cs">
+    <Compile Include="video.aspx.cs">
       <DependentUpon>video.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eventFeatures\video.aspx.designer.cs">
+    <Compile Include="video.aspx.designer.cs">
       <DependentUpon>video.aspx</DependentUpon>
     </Compile>
     <Compile Include="eventProfile.aspx.cs">
@@ -457,8 +457,9 @@
     <Folder Include="App_Browsers\" />
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
-    <Folder Include="eventFeatures\Data\Blessing\" />
-    <Folder Include="eventFeatures\Data\video\" />
+    <Folder Include="Data\Blessing\" />
+    <Folder Include="Data\video\" />
+    <Folder Include="eventFeatures\" />
     <Folder Include="USsimple\Account\" />
   </ItemGroup>
   <PropertyGroup>
