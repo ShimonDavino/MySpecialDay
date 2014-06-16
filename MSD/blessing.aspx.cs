@@ -92,7 +92,7 @@ namespace MSD
             if (FileUpload1.HasFile)
             {
 
-                FileUpload1.PostedFile.SaveAs(Server.MapPath("~/eventFeatures/Data/Blessing/") + FileUpload1.FileName);
+                FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Data/Blessing/") + FileUpload1.FileName);
             }
 
             DataTable dt = new DataTable(); // build the grid
@@ -101,7 +101,7 @@ namespace MSD
             dt.Columns.Add("Type", typeof(String));
 
 
-            foreach (string strFile in Directory.GetFiles(Server.MapPath("~/eventFeatures/Data/Blessing/")))
+            foreach (string strFile in Directory.GetFiles(Server.MapPath("~/Data/Blessing/")))
             {
                 FileInfo fi = new FileInfo(strFile);
 
