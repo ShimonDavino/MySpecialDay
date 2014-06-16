@@ -13,7 +13,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/MYSPECIALDAYlogobig_zpsf1f9e34e.jpg" />
+                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/MYSPECIALDAYlogobig_zpsf1f9e34e.jpg"   width="48.2%" height="100%" >
                     <%-- first picture --%>
 
                     <div class="container">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="item">
                     <%--    <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide"> --%>
-                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/wedding_gazebo_by_the_sea_204277_zps3e31e7ca.jpg" />
+                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/wedding_gazebo_by_the_sea_204277_zps3e31e7ca.jpg"  width="77%" height="100%" >
                     <%-- Second picture --%>
 
                     <div class="container">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="item">
                     <%--     <img data-src="Content/images/lake%20taupo%20NZ.JPG:Third slide" alt="Third slide"> --%>
-                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/wedding_bridge_groom_zps6f8bbeac.jpg" />
+                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/wedding_bridge_groom_zps6f8bbeac.jpg" width="47.5%" height="100%"  >
                     <%-- Third picture --%>
 
                     <div class="container">
