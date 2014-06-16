@@ -25,6 +25,8 @@ namespace MSD
                         int EventId = int.Parse(eventId.ToString());
                         string fullName = db.GetEventOwnerName(EventId);
                         EventOwnerNameLable.Text = fullName;
+                        //List<int> lastEvent = db.GetListEventOfUserId(61);
+                        //RidesTextBox.Text = lastEvent.ToString();
                     }
                     else
                     {
@@ -32,7 +34,7 @@ namespace MSD
                     }
                     Event tmpEvent = ((Event)Application[eventId]);
                     MessagesTextBox.Text = tmpEvent.Messages;
-                    RidesTextBox.Text = tmpEvent.Rides;
+                    //RidesTextBox.Text = tmpEvent.Rides;
                 }
                 //if (checkAuthentication())
                 //{

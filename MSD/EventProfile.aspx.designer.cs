@@ -31,6 +31,15 @@ namespace MSD {
         protected global::System.Web.UI.WebControls.ImageButton ImgLink;
         
         /// <summary>
+        /// RidesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox RidesTextBox;
+        
+        /// <summary>
         /// MessagesTextBox control.
         /// </summary>
         /// <remarks>
@@ -74,14 +83,5 @@ namespace MSD {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label msgLabel;
-        
-        /// <summary>
-        /// RidesTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RidesTextBox;
     }
 }

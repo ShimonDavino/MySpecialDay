@@ -92,9 +92,9 @@ namespace MSD
             "('" + UserId + "','" + EventId + "','" + EventType + "', N'" + EventOwnerName + "', N'" + PartnerName +
              "', N'" + Family_1 + "', N'" + Family_2 + "'," + "@datetime" + ", N'" + EventPlace + "', N'" + EventAddress +
              "','" + PhoneOf_EventOwner + "','" + PhoneOf_EventPlace + "')";
-            //cmd.CommandType = CommandType.Text;
-            cmd = new SqlCommand(Query, con);
             
+            cmd = new SqlCommand(Query, con);
+            cmd.CommandType = CommandType.Text;
           
             int affectedRows = cmd.ExecuteNonQuery();
             con.Close();
@@ -136,9 +136,9 @@ namespace MSD
                            "WHERE EventDate  = @dayNow"+
                            "AND EventType ="+"'"+EventType+"'"+
                            "ORDER BY EventDate DESC";
-            cmd.CommandType = CommandType.Text;
-            cmd = new SqlCommand(Query, con);
             
+            cmd = new SqlCommand(Query, con);
+            //cmd.CommandType = CommandType.Text;
             dr = cmd.ExecuteReader();
             while(dr.Read())
             {
@@ -184,6 +184,25 @@ namespace MSD
             int UserId = dr.GetInt32(0);
             con.Close();
             return UserId;
+        }
+
+        public List<EventUser> GetListEventOfUserId(int userId)
+        {
+            con.Open();
+            List<EventUser> eventList = new List<EventUser>(); ;
+            string Query = "SELECT EventId from EventProfile" +
+                            " WHERE UserId = '" + userId + "'";
+            cmd = new SqlCommand(Query, con);
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+
+            
+            while(dr.Read())
+            {
+                eventList.Add(new EventUser(userId,dr.GetInt32(0)));
+            }
+            con.Close();
+            return eventList;
         }
 
         public string  GetEventOwnerName(int EventId)

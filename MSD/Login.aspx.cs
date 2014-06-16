@@ -40,8 +40,7 @@ namespace MSD
                 userId = db.GetUserIdFromUserName(UserNameTextBox.Text);
                 if (Application[UserNameTextBox.Text] == null)
                 {
-                    EventLisiOfUser newUser = new EventLisiOfUser(UserNameTextBox.Text);
-                    Application[UserNameTextBox.Text] = newUser;
+                    Application[UserNameTextBox.Text] = "OK";
                 }
                 Session[UserNameTextBox.Text] = "TRUE";
                 Session["user"] = UserNameTextBox.Text;

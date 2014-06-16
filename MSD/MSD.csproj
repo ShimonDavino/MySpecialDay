@@ -243,7 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="class\Event.cs" />
-    <Compile Include="class\EventLisiOfUser.cs" />
+    <Compile Include="class\EventUser.cs" />
     <Compile Include="class\Gift.cs" />
     <Compile Include="class\Invite.cs" />
     <Compile Include="ConfirmArrival.aspx.cs">
