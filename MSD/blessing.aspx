@@ -2,8 +2,11 @@
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <p class="text_3D" align="right" dir="rtl">העלאת קבצים לאירוע של :    
+             <asp:Label ID="EventOwnerNameLable" runat="server" Text="Label">user name</asp:Label>
+         </p>
+    <div class="row">
     <h2>העלאת ברכה מעוצבת </h2>
-    <h2><asp:Literal ID="eventNameLiteral" runat="server"></asp:Literal></h2>
     <div class="row">
         <div class="col-md-8">
             <section id="loginForm">
@@ -64,6 +67,7 @@
             
             
         </div>
+        </div> <%--row--%>
 
         <div class="col-md-4">
             
