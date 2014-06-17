@@ -38,23 +38,23 @@
                     <div class="container">
                         <div class="carousel-caption">
                              
-                            <h1 dir="rtl">בואו להתרשם 
+                            <h2 dir="rtl">בואו להתרשם 
                             <p> <p dir="rtl"> ולהפוך את הארגונים לחוויה</p></p>
-                              </h1>
+                              </h2>
                             <p><a class="btn btn-lg btn-primary" href="EventProfile.aspx?EventId=11111" role="button">אירוע לדוגמא</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <%--     <img data-src="Content/images/lake%20taupo%20NZ.JPG:Third slide" alt="Third slide"> --%>
-                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/wedding_bridge_groom_zps6f8bbeac.jpg" width="47.5%" height="100%" style="margin:0 auto" >
+                    <img src="http://i1374.photobucket.com/albums/ag414/assafbt/wedding_bridge_groom_zps6f8bbeac.jpg" width="47.5%" height="100%" <%--style="margin:0 auto"--%> >
                     <%-- Third picture --%>
 
                     <div class="container">
                         <div class="carousel-caption">
                             <h1 dir="rtl">MY SPECIAL DAY </h1>
                             <p></p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">הירשם עכשיו</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">:)</a></p>
                         </div>
                     </div>
                 </div>

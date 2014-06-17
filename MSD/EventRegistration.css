@@ -221,6 +221,10 @@ text-shadow:0px 0px 0 rgb(190,93,153),1px 1px 0 rgb(180,83,143),2px 2px 0 rgb(17
         }
         h1
         {
+            color:white;
+        }
+         h2
+        {
             color:darkorange;
         }
 tr {
