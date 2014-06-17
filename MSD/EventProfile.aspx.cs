@@ -23,16 +23,35 @@ namespace MSD
                         DataBase db = new DataBase();
 
                         int EventId = int.Parse(eventId.ToString());
-                        string fullName = db.GetEventOwnerName(EventId);
-                        EventOwnerNameLable.Text = fullName;
+                        if (db.CheckIfEventExists(eventId))
+                        {
+                            string fullName = db.GetEventOwnerName(EventId);
+                            EventOwnerNameLable.Text = fullName;
+                            if (Application[eventId] == null)
+                            {
+                                Application[eventId] = new Event(EventId, fullName);
+                            }
+                            Event tmpEvent = ((Event)Application[eventId]);
+                            MessagesTextBox.Text = tmpEvent.Messages; // error when i tryed to open old event -> An exception of type 'System.NullReferenceException' occurred in MSD.dll but was not handled in user code
+                            RidesTextBox.Text = tmpEvent.Rides;
+                        }
+                        else
+                        {
+                            EventOwnerNameLable.Text = "שגיאה בטעינת הדף, אירוע לא קיים";
+                        }
                     }
                     else
                     {
                         EventOwnerNameLable.Text = "אירוע לדוגמה";
+                        Event tmpEvent = ((Event)Application[eventId]);
+                        MessagesTextBox.Text = tmpEvent.Messages; // error when i tryed to open old event -> An exception of type 'System.NullReferenceException' occurred in MSD.dll but was not handled in user code
+                        RidesTextBox.Text = tmpEvent.Rides;
                     }
-                    Event tmpEvent = ((Event)Application[eventId]);
-                    MessagesTextBox.Text = tmpEvent.Messages; // error when i tryed to open old event -> An exception of type 'System.NullReferenceException' occurred in MSD.dll but was not handled in user code
-                    RidesTextBox.Text = tmpEvent.Rides;
+
+                }
+                else
+                {
+                    EventOwnerNameLable.Text = "שגיאה בטעינת הדף, אירוע לא קיים";
                 }
                 //if (checkAuthentication())
                 //{
