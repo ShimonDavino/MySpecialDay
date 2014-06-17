@@ -58,7 +58,7 @@ namespace MSD
             dr.Read();
             int userId = dr.GetInt32(0);
             con.Close();
-            if (userId>0)
+            if (userId > 0)
                 return userId;
             else
                 return 0;
@@ -84,18 +84,18 @@ namespace MSD
         {
             con.Open();
 
-            string Query = "DECLARE @datetime date "+
-                            "set @datetime="+"'"+ EventDate+"'"+
-                " INSERT INTO [EventProfile]"+
+            string Query = "DECLARE @datetime date " +
+                            "set @datetime=" + "'" + EventDate + "'" +
+                " INSERT INTO [EventProfile]" +
                 "(UserId,EventId,EventType,EventOwnerName,PartnerName,Family_1,Family_2,EventDate,EventPlace,EventAddress,PhoneOf_EventOwner,PhoneOf_EventPlace) "
-                +"VALUES " +
+                + "VALUES " +
             "('" + UserId + "','" + EventId + "','" + EventType + "', N'" + EventOwnerName + "', N'" + PartnerName +
              "', N'" + Family_1 + "', N'" + Family_2 + "'," + "@datetime" + ", N'" + EventPlace + "', N'" + EventAddress +
              "','" + PhoneOf_EventOwner + "','" + PhoneOf_EventPlace + "')";
-            
+
             cmd = new SqlCommand(Query, con);
             cmd.CommandType = CommandType.Text;
-          
+
             int affectedRows = cmd.ExecuteNonQuery();
             con.Close();
 
@@ -110,7 +110,7 @@ namespace MSD
 
             con.Open();
             string Query = "SELECT  u.UserId from UserEvents u" +
-                           " WHERE u.UserName="+"'"+UserName+"'"+
+                           " WHERE u.UserName=" + "'" + UserName + "'" +
                            " AND EXISTS (SELECT e.UserId FROM EventProfile e" +
                            " where u.UserId= e.UserId)";
             cmd = new SqlCommand(Query, con);
@@ -125,22 +125,22 @@ namespace MSD
                 return false;
         }
 
-        public List<int> LastEvents(string EventType,int NumOfEvents)
+        public List<int> LastEvents(string EventType, int NumOfEvents)
         {
             List<int> eventsList = new List<int>();
             int i = 0;
             con.Open();
-            string Query = "DECLARE @dayNow date"+
-                           "set @dayNow = GETDATE()"+
-                           "select top"+"'"+NumOfEvents+"'"+ "EventId from EventProfile"+
-                           "WHERE EventDate  = @dayNow"+
-                           "AND EventType ="+"'"+EventType+"'"+
+            string Query = "DECLARE @dayNow date" +
+                           "set @dayNow = GETDATE()" +
+                           "select top" + "'" + NumOfEvents + "'" + "EventId from EventProfile" +
+                           "WHERE EventDate  = @dayNow" +
+                           "AND EventType =" + "'" + EventType + "'" +
                            "ORDER BY EventDate DESC";
-            
+
             cmd = new SqlCommand(Query, con);
             //cmd.CommandType = CommandType.Text;
             dr = cmd.ExecuteReader();
-            while(dr.Read())
+            while (dr.Read())
             {
                 eventsList.Add(dr.GetInt32(i));
                 i++;
@@ -152,17 +152,17 @@ namespace MSD
 
 
 
-        public bool InsertInviteToTable(int EventId,string PrivateName,string PartnerName,
-                                        string Family,int HowMatchComming)
+        public bool InsertInviteToTable(int EventId, string PrivateName, string PartnerName,
+                                        string Family, int HowMatchComming)
         {
             con.Open();
 
             string Query = "INSERT INTO InvitesList(EventId,InviteName,partnerName,Family,How_match_comming)" +
-                            " VALUES('"+ EventId+"',N'"+PrivateName+"',N'"+PartnerName+
-                            "',N'"+Family+"','"+HowMatchComming+"')";
+                            " VALUES('" + EventId + "',N'" + PrivateName + "',N'" + PartnerName +
+                            "',N'" + Family + "','" + HowMatchComming + "')";
             cmd = new SqlCommand(Query, con);
             cmd.CommandType = CommandType.Text;
-   
+
             int affectedRows = cmd.ExecuteNonQuery();
             con.Close();
 
@@ -196,20 +196,20 @@ namespace MSD
             cmd.CommandType = CommandType.Text;
             dr = cmd.ExecuteReader();
 
-            
-            while(dr.Read())
+
+            while (dr.Read())
             {
-                eventList.Add(new EventUser(userId,dr.GetInt32(0)));
+                eventList.Add(new EventUser(userId, dr.GetInt32(0)));
             }
             con.Close();
             return eventList;
         }
 
-        public string  GetEventOwnerName(int EventId)
+        public string GetEventOwnerName(int EventId)
         {
             con.Open();
-            string Query = "SELECT EventOwnerName+' & '+PartnerName from EventProfile"+
-                            " WHERE EventId = '"+EventId+"'";
+            string Query = "SELECT EventOwnerName+' & '+PartnerName from EventProfile" +
+                            " WHERE EventId = '" + EventId + "'";
             cmd = new SqlCommand(Query, con);
             cmd.CommandType = CommandType.Text;
             dr = cmd.ExecuteReader();
@@ -228,9 +228,10 @@ namespace MSD
         public List<string> GetAllInvites(string EventId)  //System.Web.UI.WebControls.ListItem[]
         {
             Names = new List<string>();
-            
+
             con.Open();
-            cmd = new SqlCommand("SELECT InviteName,partnerName,Family,How_match_comming from InvitesList", con);
+            cmd = new SqlCommand("SELECT InviteName,partnerName,Family,How_match_comming from InvitesList WHERE EventId = @EventId", con);
+            cmd.Parameters.Add("@EventId", SqlDbType.Int).Value = EventId;
             cmd.CommandType = CommandType.Text;
             dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -242,7 +243,7 @@ namespace MSD
             return Names;
         }
 
-        private string ParsFullName(string Nname, string Pname, string Fname,int count)
+        private string ParsFullName(string Nname, string Pname, string Fname, int count)
         {
             if (Pname != "")
                 return Nname + " ו" + Pname + " " + Fname + "  -  " + count;
@@ -254,7 +255,7 @@ namespace MSD
         {
             Names = new List<string>();
             con.Open();
-            cmd = new SqlCommand("SELECT InviteName,partnerName,Family,How_match_comming from InvitesList"+
+            cmd = new SqlCommand("SELECT InviteName,partnerName,Family,How_match_comming from InvitesList" +
                                  " WHERE Family LIKE @letter+'%' OR InviteName LIKE @letter+'%'", con);
 
             cmd.Parameters.Add("@letter", SqlDbType.NVarChar).Value = latter;
@@ -271,7 +272,7 @@ namespace MSD
 
         public string GetPeopleCount()
         {
-            int count=0;
+            int count = 0;
             con.Open();
             cmd = new SqlCommand("SELECT sum(How_match_comming) from InvitesList", con);
             cmd.CommandType = CommandType.Text;
