@@ -63,7 +63,7 @@ namespace MSD
                 if (!insert)
                     msgLabel.Text = "הנתונים לא הוכנסו בהצלחה - פנה לצוות האתר";
                 else
-                    Response.Redirect("eventProfile_shaul?EventId="+EventId);
+                    Response.Redirect("ConfirmArrival?EventId=" + EventId);
             }
         }
 

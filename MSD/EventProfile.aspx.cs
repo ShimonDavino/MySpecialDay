@@ -25,16 +25,14 @@ namespace MSD
                         int EventId = int.Parse(eventId.ToString());
                         string fullName = db.GetEventOwnerName(EventId);
                         EventOwnerNameLable.Text = fullName;
-                        //List<int> lastEvent = db.GetListEventOfUserId(61);
-                        //RidesTextBox.Text = lastEvent.ToString();
                     }
                     else
                     {
                         EventOwnerNameLable.Text = "אירוע לדוגמה";
                     }
                     Event tmpEvent = ((Event)Application[eventId]);
-                    MessagesTextBox.Text = tmpEvent.Messages;
-                    //RidesTextBox.Text = tmpEvent.Rides;
+                    MessagesTextBox.Text = tmpEvent.Messages; // error when i tryed to open old event -> An exception of type 'System.NullReferenceException' occurred in MSD.dll but was not handled in user code
+                    RidesTextBox.Text = tmpEvent.Rides;
                 }
                 //if (checkAuthentication())
                 //{
@@ -61,6 +59,33 @@ namespace MSD
             Response.Redirect("ConfirmArrival?EventId=" + EventId);
 
         }
+
+        protected void blessingImageButton_Click(object sender, ImageClickEventArgs e)
+        {
+            string eventId = Request.QueryString["EventId"]; // userId from table after register page
+            int EventId = int.Parse(eventId.ToString());
+            Response.Redirect("blessing?EventId=" + EventId);
+
+        }
+
+        protected void ridesImageButton_Click(object sender, ImageClickEventArgs e)
+        {
+            string eventId = Request.QueryString["EventId"]; // userId from table after register page
+            int EventId = int.Parse(eventId.ToString());
+            Response.Redirect("Rides?EventId=" + EventId);
+
+        }
+
+
+
+        protected void giftImageButton_Click(object sender, ImageClickEventArgs e)
+        {
+            string eventId = Request.QueryString["EventId"]; // userId from table after register page
+            int EventId = int.Parse(eventId.ToString());
+            Response.Redirect("GiftList?EventId=" + EventId);
+
+        }
+
 
         protected void exitButton_Click(object sender, EventArgs e)
         {

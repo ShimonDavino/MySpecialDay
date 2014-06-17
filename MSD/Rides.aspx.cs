@@ -9,11 +9,18 @@ namespace MSD
 {
     public partial class Rides : System.Web.UI.Page
     {
+        DataBase db;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                string eventId = Request.QueryString["eventId"];
+
+                db = new DataBase();
+                string eventId = Request.QueryString["EventId"]; // userId from table after register page
+                int EventId = int.Parse(eventId.ToString());
+                string fullName = db.GetEventOwnerName(EventId);
+                EventOwnerNameLable.Text = fullName;
+                
                 if (eventId != null)
                 {
                     if (Application[eventId] == null)
@@ -25,9 +32,9 @@ namespace MSD
                     }
                     else 
                     {
-                        eventNameLiteral.Text = "לאירוע של " + ((Event)Application[eventId]).EventString;
+                         //eventNameLiteral.Text = "לאירוע של " + ((Event)Application[eventId]).EventString;
                         RidesTextBox.Text = ((Event)Application[eventId]).Rides;
-                        backProfilePageLink.HRef = "~/EventProfile.aspx?eventId=" + eventId;
+                        backProfilePageLink.HRef = "~/EventProfile?eventId=" + eventId;
                     }
                         
                 }

@@ -9,33 +9,18 @@
              <asp:Label ID="EventOwnerNameLable" runat="server" Text=""></asp:Label>
             </p>
 
-            <section id="prodacts" class="row">
+            <section class="row">
                 <div class="col-sm-4">
-                    <asp:ImageButton ID="ImgLink" Width="250" Height="250" ImageUrl="Content/images/mi-ba_4.jpg"  AlternateText="לחץ כאן לאשר את הגעתך לאירוע..." CssClass="img-thumbnail img-responsive" runat="server" OnClick="confirmArrivalImageButton_Click" />
+                    <asp:ImageButton ID="ImgLink" Width="250" Height="250" ImageUrl="Content/images/MY SPECIAL DAY logo small.jpg"  AlternateText="לחץ כאן לאשר את הגעתך לאירוע..." CssClass="img-thumbnail img-responsive" runat="server" OnClick="confirmArrivalImageButton_Click" />
                     
                     <%--<img width="250" height="250" src="Content/images/mi-ba_4.jpg" alt="לחץ כאן לאשר את הגעתך לאירוע..." class="img-thumbnail img-responsive" />--%>
                     <p>כנס לקישור זה כדי לאשר הגעה</p>
 
                 </div>
-                <div class="col-sm-4">
-                        <p>פרטי האירוע  </p>
-                        <asp:TextBox ID="RidesTextBox" runat="server" BorderStyle="Dashed" BackColor="White" TextMode="MultiLine" ReadOnly="True" Height="200px" Width="300px"></asp:TextBox>
-                </div>
-                <div class="col-sm-4">
-                    <img width="250" height="250" src="Content/images/MY SPECIAL DAY logo small.jpg" alt="..." class="img-thumbnail img-responsive" />
-                    <p>כנס לקישור זה כדי הלעלות ברכה</p>
-
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-lg-offset-1">
-                        <img src="Content/images/MY SPECIAL DAY logo big.jpg" alt="..." class="img-thumbnail img-responsive" />
-                        <p>כנס לקישור זה כדי לראות רשימת מתנות</p>
-                    </div>
 
                 <div dir="rtl" class="col-sm-4">
                     <p>חלון הודעות ועדכונים</p>
-                    <asp:TextBox ID="MessagesTextBox" ForeColor="Black" runat="server" BorderStyle="Dashed" BackColor="White" TextMode="MultiLine" ReadOnly="True" Height="200px" Width="300px" AutoPostBack="True"></asp:TextBox>
+                    <asp:TextBox ID="MessagesTextBox" runat="server" BorderStyle="Dashed" BackColor="White" TextMode="MultiLine" ReadOnly="True" Height="200px" Width="300px" AutoPostBack="True"></asp:TextBox>
                     <p></p>
                     <asp:Label runat="server" AssociatedControlID="FromTextBox" >מאת:</asp:Label>
                     <asp:TextBox runat="server" ID="FromTextBox"  />
@@ -47,11 +32,29 @@
                     <asp:Button runat="server" ID="AddMessageButton" Text="הוספת הודעה" CssClass="btn btn-default" OnClick="AddMessageButton_Click" />
                     <asp:Label ID="msgLabel" runat="server" CssClass="errMsg" ForeColor="#FF3300"></asp:Label>
                 </div>
-                    
+                <div class="col-sm-4">
+                    <%--<img width="250" height="250" src="Content/images/MY SPECIAL DAY logo small.jpg" alt="..." class="img-thumbnail img-responsive" />--%>
+                    <asp:ImageButton ID="blessingIMG" Width="250" Height="250" ImageUrl="Content/images/MY SPECIAL DAY logo small.jpg"  CssClass="img-thumbnail img-responsive" runat="server" OnClick="blessingImageButton_Click" />
+                    <p>כנס לקישור זה כדי הלעלות ברכה או וידאו</p>
 
-                    <div class="col-lg-3 col-lg-offset-1 ">
-                        <img src="Content/images/MY SPECIAL DAY logo big.jpg" alt="..." class="img-thumbnail img-responsive" />
-                        <p></p>
+                </div>
+                </section>
+                <p></p>
+                <section  class="row">
+                <div class="row">
+                    <div dir="rtl" class="col-sm-4">
+                         <asp:ImageButton ID="giftIMG" Width="250" Height="250" ImageUrl="Content/images/MY SPECIAL DAY logo small.jpg"  CssClass="img-thumbnail img-responsive" runat="server" OnClick="giftImageButton_Click" />
+                        <p>כנס לקישור זה כדי לראות רשימת מתנות</p>
+                    </div>
+
+                    <div dir="rtl" class="col-sm-4">
+                        <p> פרטי האירוע </p>
+                        <asp:TextBox ID="RidesTextBox" runat="server" BorderStyle="Dashed" BackColor="White" TextMode="MultiLine" ReadOnly="True" Height="200px" Width="300px"></asp:TextBox>
+                    </div>
+
+                    <div class="col-sm-4">
+                         <asp:ImageButton ID="rideIMG" Width="250" Height="250" ImageUrl="Content/images/MY SPECIAL DAY logo small.jpg"  CssClass="img-thumbnail img-responsive" runat="server" OnClick="ridesImageButton_Click" />
+                    <p>לוח טרמפים והסעות</p>
                     </div>
 
                 </div>

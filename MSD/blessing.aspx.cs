@@ -11,20 +11,30 @@ namespace MSD
 {
     public partial class blessing : System.Web.UI.Page
     {
+        DataBase db;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                string eventId = Request.QueryString["eventId"];
+
+                db = new DataBase();
+                string eventId = Request.QueryString["EventId"]; // userId from table after register page
+                int EventId = int.Parse(eventId.ToString());
+                string fullName = db.GetEventOwnerName(EventId);
+                EventOwnerNameLable.Text = fullName;
+
+                
                 if (eventId != null)
                 {
                     if (Application[eventId] == null)
                     {
-                       
+
                         msgLabel.Text = "שגיאה בטעינת הדף אירוע לא קיים";
                     }
                     else
-                        eventNameLiteral.Text = "לאירוע של " + ((Event)Application[eventId]).EventString;
+                    {
+                        //  eventNameLiteral.Text = "לאירוע של " + ((Event)Application[eventId]).EventString;
+                    }
                 }
                 else
                 {

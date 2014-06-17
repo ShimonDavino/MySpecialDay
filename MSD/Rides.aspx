@@ -2,10 +2,13 @@
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2>הסעות וטרמפים</h2>
-    <h2>
-        <asp:Literal ID="eventNameLiteral" runat="server"></asp:Literal></h2>
     <div class="row">
+    <p class="text_3D" align="right" dir="rtl">הסעות וטרמפים לאירוע של :    
+             <asp:Label ID="EventOwnerNameLable" runat="server" Text="Label">user name</asp:Label>
+         </p>
+    <h2> </h2>
+       
+    
         <div class="col-md-8">
             <section id="GiftForm">
                 <div class="form-horizontal">
@@ -14,10 +17,14 @@
                 </div>
             </section>
         </div>
+        </div>
+        <div class="row">
         <div class="form-group">
 
-                <asp:TextBox ID="RidesTextBox" runat="server" Height="200px" Width="600px" AutoPostBack="True" ReadOnly="True" TextMode="MultiLine" dir="rtl"></asp:TextBox>
+                <asp:TextBox ID="RidesTextBox" runat="server" Height="200px" Width="600px" AutoPostBack="True" ReadOnly="True" TextMode="MultiLine" ></asp:TextBox>
         </div>
+            </div>
+    <div class="row">
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="FromTextBox" CssClass="col-md-2 control-label">מאת:</asp:Label>
             <div class="col-md-10">
@@ -26,7 +33,7 @@
                                 CssClass="text-danger" ErrorMessage="The user name field is required." />--%>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" dir="rtl">
             <asp:Label runat="server" AssociatedControlID="ContentTextBox" CssClass="col-md-2 control-label">תוכן:</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="ContentTextBox" CssClass="form-control" />
@@ -39,8 +46,10 @@
             </div>
             <br />
         </div>
-
-        <div>
+        </div>
+        <p></p>
+        <div class="row">
+        <div dir="ltr">
             <a ID="backProfilePageLink" runat="server">חזרה לדף האירוע</a>
         </div>
 
