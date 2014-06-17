@@ -26,6 +26,7 @@ namespace MSD
                 else 
                 {
                     RegiaterUserToEvent.Enabled = false;
+                    msgLabel.Text = "התחבר ליצירת אירוע חדש";
                 }
             }
         }
@@ -83,7 +84,7 @@ namespace MSD
               EventOwnerNameTextBox.Text, PartnerNameTextBox.Text, Family_1EventOwnerTextBox.Text,
               FamilyPartnerNameTextBox.Text, datepickerParsed, EventPlaceTextBox.Text, EventAddressTextBox.Text,
               PhoneOf_EventOwnerTextBox.Text, PhoneOf_EventPlaceTextBox.Text);
-                Event newEvent = new Event(randEventId, EventTypeDropDownList.SelectedItem.Value);
+                Event newEvent = new Event(randEventId, EventOwnerNameTextBox.Text + " ו" + PartnerNameTextBox.Text);
                 Application[randEventId.ToString()] = newEvent;
                 Response.Redirect("EventProfile?EventId=" + randEventId);
             }

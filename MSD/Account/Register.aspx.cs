@@ -20,11 +20,15 @@ namespace MSD.Account
             if (!isFree)
             {
                 int UserId = db.RegisterUser(UserNameTextBox.Text, PasswordTextBox.Text);
-
+                
                 if (UserId > 0)
                 {
+                    Session[UserNameTextBox.Text] = "TRUE";
+                    Session["user"] = UserNameTextBox.Text;
+                    Session["userId"] = UserId;
+                    
                     // עבור לדף הבא
-                    Response.Redirect("~/UserProfile"+"?userId="+UserId);
+                    Response.Redirect("~/UserProfile?userId="+UserId);
                 }
                 else
                 {

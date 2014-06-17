@@ -23,20 +23,14 @@ namespace MSD
                 string fullName = db.GetEventOwnerName(EventId);
                 EventOwnerNameLable.Text = fullName;
 
-                //if (checkAuthentication())
-                //{
-                //    enterLink.Visible = false;
-                //    exitButton.Visible = true;
-                //    registerLink.Text = "ברוך הבא " + Session["user"].ToString();
-                //    registerLink.NavigateUrl = "UserProfile?userId=" + Session["userId"].ToString();
-                //}
-                //else
-                //{
-                //    enterLink.Visible = true;
-                //    exitButton.Visible = false;
-                //    registerLink.Text = "רישום";
-                //    registerLink.NavigateUrl = "~/Login";
-                //}
+                if (checkAuthentication())
+                {
+                    ViewInvitesButton.Visible = true;
+                }
+                else
+                {
+                    ViewInvitesButton.Visible = false;
+                }
             }
         }
 
@@ -90,7 +84,7 @@ namespace MSD
                 ViewInvitesTextBox.Visible = true;
                 ViewInvitesListBox.Visible = true;
                 ViewInvitesListBox.Items.Clear();
-                AllInvites = db.GetAllInvites();
+                AllInvites = db.GetAllInvites(Request.QueryString["EventId"]);
 
                 foreach (string item in AllInvites)
                 {

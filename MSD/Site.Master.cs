@@ -99,7 +99,7 @@ namespace MSD
             Session[Session["user"].ToString()] = null;
             Session["user"] = null;
             Session["userId"] = null;
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect("~/main.aspx");
         }
 
 

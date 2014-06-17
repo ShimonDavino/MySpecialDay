@@ -17,6 +17,8 @@ namespace MSD
                 Application["11111"] = ExampleEvent;
             }
 
+            
+
             //if (checkAuthentication())
             //{
             //    enterLink.Visible = false;

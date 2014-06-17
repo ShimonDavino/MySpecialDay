@@ -225,7 +225,7 @@ namespace MSD
         }
 
 
-        public List<string>  GetAllInvites()  //System.Web.UI.WebControls.ListItem[]
+        public List<string> GetAllInvites(string EventId)  //System.Web.UI.WebControls.ListItem[]
         {
             Names = new List<string>();
             
@@ -293,6 +293,21 @@ namespace MSD
                 count = dr.GetInt32(0);
             con.Close();
             return count.ToString();
+        }
+
+        public bool CheckIfEventExists(string EventId)
+        {
+            con.Open();
+            cmd = new SqlCommand("SELECT  EventId from EventProfile WHERE EventId = @EventId", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@EventId", SqlDbType.NChar).Value = EventId;
+            dr = cmd.ExecuteReader();
+            bool hasRows = dr.HasRows;
+            con.Close();
+            if (hasRows)
+                return true;
+            else
+                return false;
         }
     }
 }

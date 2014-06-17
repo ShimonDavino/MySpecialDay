@@ -84,7 +84,7 @@
      
       <%--<button type="button" class="btn btn-default navbar-btn  btn-inverse  navbar-left  btn-xs" id="registerButton" >רישום</button>--%>
       
-      <button type="button" class="btn btn-default navbar-btn  navbar-left btn-xs btn-primary"><a href="../Login.aspx">כניסה</a></button>
+      <button type="button" class="btn btn-default navbar-btn  navbar-left btn-xs btn-primary" onclick=""><a href="~/Login.aspx">כניסה</a></button>
    
   </div><!-- /.navbar-collapse -->
        

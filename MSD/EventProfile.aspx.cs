@@ -21,37 +21,34 @@ namespace MSD
                     if (eventId != "11111")
                     {
                         DataBase db = new DataBase();
-
+                        
                         int EventId = int.Parse(eventId.ToString());
-                        string fullName = db.GetEventOwnerName(EventId);
-                        EventOwnerNameLable.Text = fullName;
-                        //List<int> lastEvent = db.GetListEventOfUserId(61);
-                        //RidesTextBox.Text = lastEvent.ToString();
+                        if (db.CheckIfEventExists(eventId))
+                        {
+                            string fullName = db.GetEventOwnerName(EventId);
+                            EventOwnerNameLable.Text = fullName;
+                            
+                            if (Application[eventId] == null)
+                            {
+                                Application[eventId] = new Event(EventId, fullName);
+                            }
+
+                            Event tmpEvent = ((Event)Application[eventId]);
+                            MessagesTextBox.Text = tmpEvent.Messages;
+                        }
+                        else
+                        {
+                            EventOwnerNameLable.Text = "דף אירוע לא קיים";
+                        }
                     }
                     else
                     {
                         EventOwnerNameLable.Text = "אירוע לדוגמה";
+                        Event tmpEvent = ((Event)Application[eventId]);
+                        MessagesTextBox.Text = tmpEvent.Messages;
                     }
-                    Event tmpEvent = ((Event)Application[eventId]);
-                    MessagesTextBox.Text = tmpEvent.Messages;
-                    //RidesTextBox.Text = tmpEvent.Rides;
                 }
-                //if (checkAuthentication())
-                //{
-                //    enterLink.Visible = false;
-                //    exitButton.Visible = true;
-                //    registerLink.Text = "ברוך הבא " + Session["user"].ToString();
-                //    registerLink.NavigateUrl = "UserProfile?userId=" + Session["userId"].ToString();
-                //}
-                //else
-                //{
-                //    enterLink.Visible = true;
-                //    exitButton.Visible = false;
-                //    registerLink.Text = "רישום";
-                //    registerLink.NavigateUrl = "~/Login";
-                //}
             }
-
         }
 
         protected void confirmArrivalImageButton_Click(object sender, ImageClickEventArgs e)
