@@ -35,7 +35,7 @@
                 <div class="col-sm-4">
                     <%--<img width="250" height="250" src="Content/images/MY SPECIAL DAY logo small.jpg" alt="..." class="img-thumbnail img-responsive" />--%>
                     <asp:ImageButton ID="blessingIMG" Width="250" Height="250" ImageUrl="Content/images/MY SPECIAL DAY logo small.jpg"  CssClass="img-thumbnail img-responsive" runat="server" OnClick="blessingImageButton_Click" />
-                    <p>כנס לקישור זה כדי הלעלות ברכה או וידאו</p>
+                    <p>כנס לקישור זה כדי הלעלות ברכה</p>
 
                 </div>
                 </section>
