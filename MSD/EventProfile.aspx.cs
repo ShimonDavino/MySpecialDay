@@ -33,7 +33,9 @@ namespace MSD
                             }
                             Event tmpEvent = ((Event)Application[eventId]);
                             MessagesTextBox.Text = tmpEvent.Messages; // error when i tryed to open old event -> An exception of type 'System.NullReferenceException' occurred in MSD.dll but was not handled in user code
-                            RidesTextBox.Text = tmpEvent.Rides;
+                            //RidesTextBox.Text = tmpEvent.Rides;
+                            string eventD = "תאריך האירוע:"+db.GetEventDate(EventId)+"\nמקום האירוע: "+ db.GetEventPlace(EventId)+"\nכתובת האירוע: "+ db.GetEventAddress(EventId);
+                            RidesTextBox.Text = eventD;
                         }
                         else
                         {
@@ -45,7 +47,7 @@ namespace MSD
                         EventOwnerNameLable.Text = "אירוע לדוגמה";
                         Event tmpEvent = ((Event)Application[eventId]);
                         MessagesTextBox.Text = tmpEvent.Messages; // error when i tryed to open old event -> An exception of type 'System.NullReferenceException' occurred in MSD.dll but was not handled in user code
-                        RidesTextBox.Text = tmpEvent.Rides;
+                        //RidesTextBox.Text = tmpEvent.Rides;
                     }
 
                 }

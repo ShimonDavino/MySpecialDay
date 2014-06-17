@@ -219,6 +219,49 @@ namespace MSD
             return UserName;
         }
 
+        public string GetEventPlace(int EventId)
+        {
+            con.Open();
+            string Query = "SELECT EventPlace from EventProfile" +
+                            " WHERE EventId = '" + EventId + "'";
+            cmd = new SqlCommand(Query, con);
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            string UserName = dr.GetString(0).ToString();
+            con.Close();
+            return UserName;
+        }
+
+        public string GetEventDate(int EventId)
+        {
+            con.Open();
+            string Query = "SELECT EventDate from EventProfile" +
+                            " WHERE EventId = '" + EventId + "'";
+            cmd = new SqlCommand(Query, con);
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            string UserName = dr.GetDateTime(0).ToShortDateString();
+            con.Close();
+            return UserName;
+        }
+
+        public string GetEventAddress(int EventId)
+        {
+            con.Open();
+            string Query = "SELECT EventAddress from EventProfile" +
+                            " WHERE EventId = '" + EventId + "'";
+            cmd = new SqlCommand(Query, con);
+            cmd.CommandType = CommandType.Text;
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            string UserName = dr.GetString(0).ToString();
+            con.Close();
+            return UserName;
+        }
+
+
         internal bool IsOwnerEvent(int UserId)
         {
             throw new NotImplementedException();

@@ -17,8 +17,9 @@ namespace MSD
                 if (userIdstr != null)
                 {
 
+                    get_UsernameLable.Text = "ברוך הבא " + Session["user"].ToString();
                     DataBase db = new DataBase();
-
+                     
                     int userId = int.Parse(userIdstr.ToString());
                     //string fullName = db.GetEventOwnerName(userId);
 
@@ -39,7 +40,7 @@ namespace MSD
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("EventProfile?EventId=" + ((LinkButton)sender).CommandArgument.ToString());
         }
     }
 }
