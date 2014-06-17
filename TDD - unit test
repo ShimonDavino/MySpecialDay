@@ -1,0 +1,196 @@
+//this program make unitast check that any field have exactly value 
+//and some field have the right range or right length
+//and check also that few field is equal each
+
+//note: some check mathod possibly to do in generic pattern
+
+//the return value -1 mark that error happened
+//the return value 0 mark that the action happened right
+//----------------------------------------------------------------------------
+public int checkIfUserNameIsValid()
+	{
+		if(userName.IsString == FALSE)
+		{
+			print("the user name is not invalid please chang it to string\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//----------------------------------------------------------------------------
+public int checkIfPasswordIsValid()
+	{
+		if(password.IsString == FALSE)
+		{
+			print("the password is not invalid please chang it to string\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//-----------------------------------------------------------------------------
+public int checkIfPasswordConfirmIsValid()
+	{
+		if(passwordConfirm.IsString == FALSE)
+		{
+			print("the password Confirm is not invalid please chang it to string\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//----------------------------------------------------------------------------
+public int checkIfPasswordIsEqualToConfirmPassword()
+	{
+		if(password != passwordConfirm)
+		{
+			print("the password is not equal to confirm password please chang it correctly\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//------------------------------------------------------------------------------
+public int checkIfPresentIsValid()
+	{
+		if(present.IsString == FALSE)
+		{
+			print("the present is not invalid please chang it to string\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//----------------------------------------------------------------------------
+public int checkIfEventNumberIsValid()
+	{
+		if(eventNumber.IsNumber == FALSE)
+		{
+			print("the Event Number is not invalid please chang it to number\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//----------------------------------------------------------------------------
+//range 0-5000 of random function
+public int checkIfEventNumberIsInRange()
+	{
+		if(eventNumber < 0 || eventNumber >5000)
+		{
+			print("the event Number is out of the range please try to do it again or apeal us\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//----------------------------------------------------------------------------
+public int checkIfAcountPresentIsValid()
+	{
+		if(acountPresent.IsNumber == FALSE)
+		{
+			print("the acount Present is not invalid please chang it to number\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//----------------------------------------------------------------------------
+public int checkIfPhoneNumberIsValid()
+	{
+		if(phoneNumber.IsString == FALSE)
+		{
+			print("the phone Number is not invalid please chang it to string\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	} 
+//----------------------------------------------------------------------------
+public int checkIfAcountPresentIsValid()
+	{
+		int lengthPhone = langth(phoneNumber);
+		if(lengthPhone != 10)
+		{
+			print("the length Phone is not in the right length please chang it to string with 10 chars\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//----------------------------------------------------------------------------
+public int checkIfFirstNameIsValid()
+	{
+		if(firstName.IsString == FALSE)
+		{
+			print("the first Name is not invalid please chang it to string\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//-----------------------------------------------------------------------------
+public int checkIfSecandNameIsValid()
+	{
+		if(phoneNumber.IsString == FALSE)
+		{
+			print("the phone Number is not invalid please chang it to string\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//-----------------------------------------------------------------------------
+public int checkIfCoupleFirstNameIsValid()
+	{
+		if(coupleFirstName.IsString == FALSE)
+		{
+			print("the couple First Name is not invalid please chang it to string\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//-----------------------------------------------------------------------------
+public int checkIfCouplesecandNameIsValid()
+	{
+		if(couplesecandName.IsString == FALSE)
+		{
+			print("the couple secand Name is not invalid please chang it to string\n");
+			return -1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+//-----------------------------------------------------------------------------
+	//address str 
+	//placename str
+	
