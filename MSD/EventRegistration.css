@@ -51,12 +51,12 @@ body{
 	margin-top:15px;				
 }
 				
-.carousel-caption{
-	font-size:25px;
+.carousel-caption{ /*desaign the text in the main page*/
+	font-size:17px; /*25px;*/
 	/*background-color:rgba(0,0,0,0.1);*/
-	width:100%;
-	right:0px;
-	color:#FFF;
+	width:150%;
+	right:-75px;
+	color:#fff; /*#fff*/
 }
 					
 #prodacts div{
@@ -148,7 +148,7 @@ footer {
    box-shadow: inset 0px 1px 2px 0px #9C9C9C;
   }
 .textboxCss:active  {
-   border: solid 2px #0043EB;
+   border: solid 2px #b2540d;
   }
 
 .TextBoxCss {
@@ -178,21 +178,21 @@ footer {
     font-weight:bold;
     text-decoration:none;
     cursor: pointer;
-    background:-webkit-linear-gradient(90deg, #468ccf 5%, #A82B55 100%);
-    background:-moz-linear-gradient(90deg, #468ccf 5%, #A82B55 100%);
-    background:-ms-linear-gradient(90deg, #468ccf 5%, #A82B55 100%);
-    background:linear-gradient(180deg, #A82B55 5%, #468ccf 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#A82B55', endColorstr='#468ccf');
-    /*background-color:#468ccf;*/
+    background:-webkit-linear-gradient(90deg, #b2540d 5%, #A82B55 100%);
+    background:-moz-linear-gradient(90deg, #b2540d 5%, #A82B55 100%);
+    background:-ms-linear-gradient(90deg,#b2540d 5%, #A82B55 100%);
+    background:linear-gradient(180deg, #A82B55 5%,#b2540d 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#A82B55', endColorstr='#b2540d'); /*#468ccf*/
+    /*background-color:#468ccf; orenge butten:#b2540d*/
     color:#FFFFFF;
     display:inline-block;
 }
 .buttonCss:hover {
-    background:-webkit-linear-gradient(90deg, #A82B55 5%, #468ccf 100%);
-    background:-moz-linear-gradient(90deg, #A82B55 5%, #468ccf 100%);
-    background:-ms-linear-gradient(90deg, #A82B55 5%, #468ccf 100%);
-    background:linear-gradient(180deg, #468ccf 5%, #A82B55 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#A82B55');
+    background:-webkit-linear-gradient(90deg, #A82B55 5%, #b2540d 100%);
+    background:-moz-linear-gradient(90deg, #A82B55 5%, #b2540d 100%);
+    background:-ms-linear-gradient(90deg, #A82B55 5%, #b2540d 100%);
+    background:linear-gradient(180deg, #b2540d 5%, #A82B55 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b2540d', endColorstr='#A82B55');
     /*background-color:#A82B55;*/
 }
 .buttonCss:active {
@@ -204,7 +204,7 @@ footer {
 .text_3D{
 font-family: ABeeZee ;
 line-height: 1em;
-color: #0043EB; /* font color */
+color: #b2540d; /* font color */
 font-size: 40px;
 text-shadow:0px 0px 0 rgb(190,93,153),1px 1px 0 rgb(180,83,143),2px 2px 0 rgb(170,73,133),3px 3px 0 rgb(160,63,123),4px 4px 0 rgb(150,53,113),5px 5px 0 rgb(140,43,103),6px 6px 0 rgb(130,33,93),7px 7px 0 rgb(120,23,83), 8px 8px 0 rgb(110,13,73),9px 9px 8px rgba(0,0,0,0.55),9px 9px 1px rgba(0,0,0,0.5),0px 0px 8px rgba(0,0,0,.2);}
 
@@ -221,7 +221,7 @@ text-shadow:0px 0px 0 rgb(190,93,153),1px 1px 0 rgb(180,83,143),2px 2px 0 rgb(17
         }
         h1
         {
-            color:blue;
+            color:darkorange;
         }
 tr {
     height: 40px;
